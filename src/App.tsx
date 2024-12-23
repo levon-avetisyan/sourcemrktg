@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Spinner } from './styles/CommonStyles';
 import Home from './pages/Home';
 
