@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <Suspense fallback={<Spinner />}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sourcemrktg" element={<Navigate to="/" replace />} />
+        <Route path="/sourcemrktg" element={<Home />} />
       </Routes>
     </Suspense>
   );
