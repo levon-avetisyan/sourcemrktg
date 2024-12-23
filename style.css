@@ -93,7 +93,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding-bottom: 5%;
+    padding-bottom: 10%;
 }
 
 .hero-content .text-content h1 {
