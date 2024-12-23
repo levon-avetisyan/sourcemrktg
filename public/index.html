@@ -39,14 +39,14 @@
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&display=swap"
     rel="stylesheet">
   <!--  stylesheet-->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <nav class="navbar navbar-expand-lg position-absolute navbar-dark pt-4">
   <div class="container-fluid">
     <a class="navbar-brand ps-5" href="#">
-      <img src="./img/logo_3.svg" alt="logo">
+      <img src="%PUBLIC_URL%/img/logo_3.svg" alt="logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,13 +74,14 @@
       </div>
     </div>
     <div class="background-video">
-      <video autoplay="" loop=""
-             style="background-image:url('./img/hero-background-img.png')"
-             muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-        <source
-          src="https://vimeo.com/1041655955"
-          data-wf-ignore="true">
-      </video>
+      <div class="iframe-wrapper">
+        <iframe
+          src="https://player.vimeo.com/video/1041655955?autoplay=1&loop=1&muted=1&background=1&byline=0&title=0"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -248,5 +249,5 @@
 -->
 </body>
 <script src="https://player.vimeo.com/api/player.js"></script>
-<script src="./js/scripts.js"></script>
+<script src="%PUBLIC_URL%/js/scripts.js"></script>
 </html>
