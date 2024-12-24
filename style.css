@@ -22,8 +22,6 @@ body {
 .navbar-nav .nav-link {
     font-family: "Quicksand", serif;
     font-size: 20px;
-    /*padding-left: 40px;*/
-    /*padding-right: 40px;*/
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -178,10 +176,6 @@ p {
     font-size: 18px;
 }
 
-footer {
-    /*background-color: #212529;*/
-}
-
 .schedule {
     display: none;
     background-color: black;
@@ -202,7 +196,9 @@ section.questionnaire {
 }
 
 .questionnaire-form {
+    display: none;
     font-family: "Quicksand", serif;
+    max-width: 700px;
 }
 
 .questionnaire-form h2 {
@@ -250,4 +246,95 @@ section.questionnaire {
 
 .form-check-input {
     cursor: pointer;
+}
+
+.intro-video-wrapper {
+    position: relative;
+    padding: 41.72% 0 0 0;
+    overflow: hidden;
+    max-width: 1000px;
+}
+
+.intro-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.steps {
+    font-family: "Quicksand", serif;
+}
+
+.steps .card.active {
+    border: 2px solid #95c623 !important;
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+}
+
+.steps .card.active:before {
+    content: "";
+    display: inline-block;
+    background-image: url("./img/icons/check-circle-fill.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ffffff;
+    border-radius: 50%;
+    top: -10px;
+    right: -12px;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+
+
+.steps .card .card-title {
+    font-weight: 700;
+}
+
+.steps .card .card-text {
+    font-size: 16px;
+}
+
+.steps .card i {
+    color: #669bbc;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.bounce {
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    70% {
+        transform: translateY(0%);
+    }
+
+    80% {
+        transform: translateY(-15%);
+    }
+    90% {
+        transform: translateY(0%);
+    }
+    95% {
+        transform: translateY(-7%);
+    }
+    97% {
+        transform: translateY(0%);
+    }
+    99% {
+        transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
