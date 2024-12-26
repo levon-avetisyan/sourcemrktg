@@ -30,19 +30,33 @@ const Steps: React.FC<IProps> = ({ activeStep, hasCompletedBooking }) => {
             <div className="container text-center">
                 <h2 className="mb-4">How It Works</h2>
                 <div className="row gy-4">
-                    {steps.map((step, index) => (
-                        <div className="col-md-4" key={index}>
-                            <div className={`card h-100 border-0 shadow ${activeStep > index + 1 || (activeStep === 3 && hasCompletedBooking) ? 'completed' : ''} ${activeStep === index + 1 && !hasCompletedBooking ? 'active' : ''}`}>
-                                <div className="card-body">
-                                    <div className="icon mb-3">
-                                        <i className={`bi ${step.icon} fs-1`}></i>
+                    {steps.map((step, index) => {
+                        const isCompleted =
+                            activeStep > index + 1 || (activeStep === 3 && hasCompletedBooking);
+
+                        const isActive = activeStep === index + 1 && !hasCompletedBooking;
+
+                        const cardClass = `card h-100 border-0 shadow ${
+                            isCompleted ? 'completed' : ''
+                        } ${isActive ? 'active' : ''}`;
+
+                        return (
+                            <div className="col-md-4" key={index}>
+                                <div className={cardClass}>
+                                    {isCompleted && <i className="bi bi-check-circle-fill"></i>}
+                                    <div className="card-body">
+                                        <div className="icon mb-3">
+                                            <i className={`bi ${step.icon} fs-1`}></i>
+                                        </div>
+                                        <h5 className="card-title">
+                                            Step {index + 1}: {step.title}
+                                        </h5>
+                                        <p className="card-text">{step.description}</p>
                                     </div>
-                                    <h5 className="card-title">Step {index + 1}: {step.title}</h5>
-                                    <p className="card-text">{step.description}</p>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </div>

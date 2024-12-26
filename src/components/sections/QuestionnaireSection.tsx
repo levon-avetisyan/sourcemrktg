@@ -55,7 +55,7 @@ const QuestionnaireSection = () => {
 
 
     return (
-        <section id="questionnaire" className="questionnaire py-5">
+        <section id="questionnaire" className="questionnaire">
             <div className="container">
                 <h2 className="mb-3 text-center section-title">Join Our Dynamic Team!</h2>
                 <p className="mb-4 mx-auto text-center subtitle">

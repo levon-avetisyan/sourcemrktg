@@ -21,7 +21,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section className="hero">
+        <section id="hero" className="hero">
             <div className="hero-content">
                 <div className="container-fluid h-100">
                     <div className="text-content">
@@ -29,7 +29,7 @@ const HeroSection = () => {
                             Our mission is to empower our employees to realize and maximize their earning potential
                         </h1>
                         <h2>
-                            inspiring confidence in their ability to provide for themselves and their families.
+                            Inspiring confidence in their ability to provide for themselves and their families.
                         </h2>
                         <button
                             type="button"

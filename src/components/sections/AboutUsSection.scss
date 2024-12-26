@@ -1,0 +1,13 @@
+@use '../../variables';
+
+.about-us {
+  background: variables.$sand-brown;
+  background: -webkit-linear-gradient(to right, variables.$pine-green, variables.$sand-brown);
+  background: linear-gradient(to right, variables.$pine-green, variables.$sand-brown);
+}
+
+
+.about-img-wrapper{
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+}

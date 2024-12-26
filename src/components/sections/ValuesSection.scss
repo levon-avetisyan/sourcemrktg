@@ -1,0 +1,26 @@
+.value-card{
+  min-height: 100%;
+  border-radius: 16px;
+  padding: 20px 40px 30px;
+  background: #ffffff;
+  h5 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  .img-wrapper{
+    max-width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  p {
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 0;
+  }
+}

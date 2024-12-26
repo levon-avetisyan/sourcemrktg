@@ -1,5 +1,5 @@
 import "./Navbar.scss"
-import logo from '../assets/images/logo.svg';
+import logo from '../assets/images/sourcemrktg-logo.svg';
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg position-absolute navbar-dark pt-4">
@@ -23,13 +23,16 @@ const Navbar = () => {
                         <a className="nav-link px-5 active" aria-current="page" href="#questionnaire">
                             Join us
                         </a>
-                        <a className="nav-link px-5 active" aria-current="page" href="#ourValues">
+                        <a className="nav-link px-5 active" aria-current="page" href="#about">
+                            About Us
+                        </a>
+                        <a className="nav-link px-5 active" aria-current="page" href="#values">
                             Our values
                         </a>
                         <a className="nav-link px-5 active" aria-current="page" href="#testimonials">
                             Testimonials
                         </a>
-                        <a className="nav-link px-5 active" aria-current="page" href="#contactUs">
+                        <a className="nav-link px-5 active" aria-current="page" href="#contact">
                             Contact us
                         </a>
                     </div>

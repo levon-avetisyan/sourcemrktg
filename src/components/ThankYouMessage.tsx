@@ -4,7 +4,7 @@ const SalesRepScheduled: React.FC = () => {
     const styles: { [key: string]: React.CSSProperties } = {
         container: {
             maxWidth: "600px",
-            margin: "50px auto",
+            margin: "0 auto",
             textAlign: "center",
             backgroundColor: "#f8f9fa",
             borderRadius: "10px",
