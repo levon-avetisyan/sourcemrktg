@@ -1,14 +1,23 @@
-.value-card{
+@use '../../variables.scss';
+
+
+.values{
+  background: #2f4d41;
+  background: -webkit-linear-gradient(38deg, #2f4d41 20%, #11151c 80%);
+  background: linear-gradient(38deg, #2f4d41 20%, #11151c 80%);
+}
+
+.value-card {
   min-height: 100%;
   border-radius: 16px;
   padding: 20px 40px 30px;
-  background: #ffffff;
+  background: variables.$white;
   h5 {
-    font-family: "Quicksand", sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 900;
     font-size: 24px;
   }
-  .img-wrapper{
+  .img-wrapper {
     max-width: 130px;
     height: 130px;
     display: flex;
@@ -20,7 +29,7 @@
     margin-bottom: 0;
   }
   p {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
   }
 }

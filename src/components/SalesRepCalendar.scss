@@ -1,11 +1,9 @@
 .calendar-container {
+  overflow: hidden;
   .calendar-iframe {
     width: 100%;
     border: none;
     overflow: hidden;
-    height: auto !important;
-    min-height: 702px !important;
     border-radius: 0.5rem;
   }
 }
-

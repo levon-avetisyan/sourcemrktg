@@ -1,4 +1,4 @@
-@use "./variables.scss";
+@use './variables.scss';
 
 html {
   font-size: 16px;
@@ -9,13 +9,11 @@ html {
   height: 100%;
 }
 
-button {
-  font-family: "Quicksand", sans-serif;
+.btn-rounded-border {
+  font-family: 'Quicksand', sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-}
-.btn-rounded-border {
   border-radius: 34px;
 }
 
@@ -28,14 +26,13 @@ button {
 }
 
 .text-error {
-  font-family: "Roboto", serif;
+  font-family: 'Roboto', serif;
   font-weight: 400;
-  border: 1px dashed variables.$red;;
+  border: 1px dashed variables.$red;
   padding: 4px;
   font-size: 15px !important;
   margin-bottom: 0;
 }
-
 
 .hide {
   display: none !important;
@@ -79,19 +76,18 @@ section {
 }
 
 h2 {
-  &.section-title{
-    font-family: "Lexend Deca", serif;
+  &.section-title {
+    font-family: 'Lexend Deca', serif;
     font-size: 2.5rem;
   }
 }
 
 p {
-  &.subtitle{
-    font-family: "Lexend Deca", serif;
+  &.subtitle {
+    font-family: 'Lexend Deca', serif;
     font-size: 18px;
   }
-  &.about-section-subtitle{
-
+  &.about-section-subtitle {
   }
 }
 
@@ -103,4 +99,13 @@ p {
 }
 .border-radius-16 {
   border-radius: 16px;
+}
+
+.hr-break {
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-top: 3px solid variables.$sand-brown;
+  opacity: 1;
 }

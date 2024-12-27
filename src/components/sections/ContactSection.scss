@@ -1,3 +1,29 @@
-.contact{
+@use "../../variables.scss";
+
+.contact {
+  overflow: hidden;
   padding-bottom: 0;
+  background-color: variables.$black;
+  padding-top: 0;
+
+  .contact-info {
+    color: variables.$white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 120px;
+    padding-left: 120px;
+    a {
+      color: variables.$white;
+    }
+    h2 {
+      color: white;
+    }
+  }
+
+  .contact-form {
+    padding-top: 120px;
+    margin-top: 100px;
+  }
 }

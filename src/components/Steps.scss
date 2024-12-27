@@ -1,42 +1,69 @@
+@use '../variables.scss';
+
 .steps {
-  font-family: "Quicksand", serif;
+  font-family: 'Quicksand', serif;
 
   .card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
     &.completed {
-      border: 2px solid #95c623 !important;
+      border: 2px solid variables.$pine-green !important;
       background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
       box-shadow: none !important;
     }
 
-    &.active{
-      border: 1px solid #00000026 !important;
-      transform: scale(1.05);
-      background-image: linear-gradient(163deg, #fdfcfb 0%, #e2d1c3 100%);
+    &.active {
+      border: 1px solid variables.$border-active;
+      background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
     }
 
-    .bi-check-circle-fill{
-      top: -10px;
-      right: -12px;
+    .bi-check-circle-fill {
+      top: -11px;
+      right: -11px;
       position: absolute;
-      font-size: 24px;
-      width: 24px;
-      height: 24px;
-      color: #95c623;
-      background-color: #ffffff;
+      font-size: 25px;
+      width: 25px;
+      height: 25px;
+      color: variables.$pine-green;
+      background-color: variables.$white;
       border-radius: 50%;
       line-height: 0;
     }
 
+    .card-title.step-number {
+      font-family: 'Lexend Deca', serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
     .card-title {
-      font-weight: 700;
+      font-family: 'Lexend Deca', serif;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
     }
 
     .card-text {
+      font-family: 'Roboto', sans-serif;
       font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
 
     i {
-      color: #669bbc;
+      font-size: 34px;
+      color: variables.$pine-green;
     }
   }
 }
+
+@media (max-width: 768px) {
+  .steps {
+    margin: 0 auto;
+    max-width: 450px;
+  }
+}
+

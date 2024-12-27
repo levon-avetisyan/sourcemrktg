@@ -1,17 +1,39 @@
+@use '../variables.scss';
+
 .questionnaire-form {
-  font-family: "Quicksand", serif;
-  max-width: 700px;
-  background: #ffffff;
+  font-family: 'Quicksand', serif;
+  max-width: 600px;
+  background: variables.$white;
   p {
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
+  }
+  .form-label{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+  }
+  .form-check {
+    padding-left: 50px;
+    .form-check-input {
+      cursor: pointer;
+    }
+    .form-check-label {
+      font-family: 'Quicksand', sans-serif;
+      width: 100%;
+      cursor: pointer;
+      font-weight: 700;
+    }
   }
 }
 
-.form-check-label {
-  width: 100%;
-  cursor: pointer;
-}
-s
-.form-check-input {
-  cursor: pointer;
+
+
+
+@media (max-width: 768px) {
+  .questionnaire-form {
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 30px 20px !important;
+
+  }
 }
