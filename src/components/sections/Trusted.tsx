@@ -4,12 +4,12 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import basel from '../../assets/partner-logos/basel-colored.svg';
-import bern from '../../assets/partner-logos/bern-colored.svg';
-import delaware from '../../assets/partner-logos/delaware-colored.svg';
-import memphis from '../../assets/partner-logos/memphis-colored.svg';
-import sydney from '../../assets/partner-logos/sydney-colored.svg';
-import proNature from '../../assets/partner-logos/pronature-color.svg';
+import basel from '../../assets/images/partners/partner-1.svg';
+import bern from '../../assets/images/partners/partner-2.svg';
+import delaware from '../../assets/images/partners/partner-3.svg';
+import memphis from '../../assets/images/partners/partner-4.svg';
+import sydney from '../../assets/images/partners/partner-6.svg';
+import proNature from '../../assets/images/partners/partner-5.svg';
 
 const TrustedBy = () => {
   const trustedBy = [

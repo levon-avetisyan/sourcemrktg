@@ -1,8 +1,8 @@
 import './ValuesSection.scss';
-import Stones from '../../assets/images/smooth the stone - 1 -2.png';
-import Carp from '../../assets/images/smooth the stone - 2.png';
-import Shell from '../../assets/images/smooth the stone - 3.png';
-import Swing from '../../assets/images/smooth the stone - 4.png';
+import Stones from '../../assets/images/values/value-1.png';
+import Carp from '../../assets/images/values/value-2.png';
+import Shell from '../../assets/images/values/value-3.png';
+import Swing from '../../assets/images/values/value-4.png';
 
 const ValuesSection = () => {
   const values = [
@@ -35,16 +35,18 @@ const ValuesSection = () => {
   return (
     <section id="values" className="values" aria-label="Our Values Section">
       <div className="container text-center">
-        <h2 className="mb-5 section-title text-white">Our Values</h2>
+        <h2 className="section-title text-white">Our Values</h2>
+        <hr className="hr-break"/>
+        <p className="subtitle">Guiding Principles That Shape Our Journey to Excellence</p>
         <div className="row">
           {values.map((value, index) => (
-            <div key={index} className="col-lg-6 mb-4">
-              <div className="shadow value-card d-flex flex-column align-items-center">
-                <div className="img-wrapper">
+            <div key={index} className="col-lg-6 col-xl-3 mb-5 mb-xl-0">
+              <div className="value-card">
+                <h5 className="mb-4">{value.title}</h5>
+                <div className="img-wrapper mb-4">
                   <img src={value.icon} alt={`Icon representing ${value.title}`} />
                 </div>
-                <h5 className="mb-2">{value.title}</h5>
-                <p className="text-muted">{value.description}</p>
+                <p>{value.description}</p>
               </div>
             </div>
           ))}

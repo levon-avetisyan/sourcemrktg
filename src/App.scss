@@ -87,6 +87,7 @@ p {
     font-family: 'Lexend Deca', serif;
     font-size: 18px;
   }
+
   &.about-section-subtitle {
   }
 }
@@ -94,9 +95,11 @@ p {
 .border-radius-4 {
   border-radius: 4px;
 }
+
 .border-radius-8 {
   border-radius: 8px;
 }
+
 .border-radius-16 {
   border-radius: 16px;
 }
@@ -108,4 +111,12 @@ p {
   margin-bottom: 30px;
   border-top: 3px solid variables.$sand-brown;
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    &.section-title {
+      font-size: 2rem;
+    }
+  }
 }

@@ -20,8 +20,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="contact">
       <div className="row">
-        {/* Office Details */}
-        <div className="col-md-2">
+        <div className="col-12 col-md-6 col-lg-4 col-xl-3">
           <div className="contact-info">
             <h2 className="mb-5 section-title text-left">Contact Us</h2>
             {offices.map((office, index) => (
@@ -45,47 +44,45 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="col-md-3">
-          <form className="contact-form">
-            <div className="mb-3">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="form-control"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="form-control"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <textarea
-                id="message"
-                name="message"
-                className="form-control"
-                rows={4}
-                placeholder="Enter your message"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="btn btn-lg btn-outline-light w-100">
-              Send Message
-            </button>
-          </form>
-        </div>
+        {/*<div className="col-md-3">*/}
+        {/*  <form className="contact-form">*/}
+        {/*    <div className="mb-3">*/}
+        {/*      <input*/}
+        {/*        type="text"*/}
+        {/*        id="name"*/}
+        {/*        name="name"*/}
+        {/*        className="form-control"*/}
+        {/*        placeholder="Enter your name"*/}
+        {/*        required*/}
+        {/*      />*/}
+        {/*    </div>*/}
+        {/*    <div className="mb-3">*/}
+        {/*      <input*/}
+        {/*        type="email"*/}
+        {/*        id="email"*/}
+        {/*        name="email"*/}
+        {/*        className="form-control"*/}
+        {/*        placeholder="Enter your email"*/}
+        {/*        required*/}
+        {/*      />*/}
+        {/*    </div>*/}
+        {/*    <div className="mb-3">*/}
+        {/*      <textarea*/}
+        {/*        id="message"*/}
+        {/*        name="message"*/}
+        {/*        className="form-control"*/}
+        {/*        rows={4}*/}
+        {/*        placeholder="Enter your message"*/}
+        {/*        required*/}
+        {/*      ></textarea>*/}
+        {/*    </div>*/}
+        {/*    <button type="submit" className="btn btn-lg btn-outline-light w-100">*/}
+        {/*      Send Message*/}
+        {/*    </button>*/}
+        {/*  </form>*/}
+        {/*</div>*/}
 
-        {/* Embedded Map */}
-        <div className="col-md-7">
+        <div className="col-12 col-md-6 col-lg-8 col-xl-9">
           <EmbedMap />
         </div>
       </div>

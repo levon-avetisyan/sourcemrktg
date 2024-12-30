@@ -1,11 +1,11 @@
-@use '../../variables.scss';
+@use '../../variables.scss' as vars;
 
 .testimonials{
-  background-color: variables.$black;
-  color: variables.$white;
+  background-image: linear-gradient(50deg, #fdfbfb 0%, #ebedee 100%);
+  color: vars.$black;
   .swiper-button-next,
   .swiper-button-prev {
-    color: variables.$white;
+    color: vars.$white;
     font-size: 20px;
   }
   .swiper-wrapper{
@@ -13,28 +13,30 @@
   }
 
   .swiper-pagination-bullet {
-    background-color: variables.$neutralLight;
+    background-color: vars.$neutralLight;
     border-radius: 0;
     width: 50px;
     height: 3px;
   }
 
   .swiper-pagination-bullet-active {
-    background-color:  variables.$sand-brown;
+    background-color:  vars.$sand-brown;
   }
 
   .swiper-slide {
-    padding: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    padding: 0;
+    border-radius: 16px;
   }
 
   .swiper {
     padding: 20px 0;
-    margin-top: 100px;
+    margin-top: 30px;
   }
 
   .client-info{
-    background-color: variables.$white;
-    color: variables.$black;
+    background-color: vars.$black;
+    color: vars.$white;
     border-radius: 16px;
     text-align: center;
     display: flex;
@@ -48,7 +50,7 @@
       font-family: 'Quicksand', sans-serif;
       font-size: 24px;
       font-weight: 700;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
     .client-designation{
       font-family: 'Quicksand', sans-serif;
@@ -65,13 +67,21 @@
       top: -34px;
       left: 0;
       font-size: 180px;
-      color: variables.$sand-brown;
+      color: vars.$sand-brown;
       z-index: 1;
       opacity: 0.5;
     }
     .client-name, .client-feedback, .client-designation{
       position: relative;
       z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .testimonials {
+    .swiper {
+      margin-top: 0;
     }
   }
 }

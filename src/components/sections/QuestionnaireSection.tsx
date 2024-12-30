@@ -59,14 +59,13 @@ const QuestionnaireSection = () => {
     <section id="questionnaire" className="questionnaire">
       <div className="container">
         <h2 className="mb-3 text-center section-title">Join Our Dynamic Team!</h2>
+        <hr className="hr-break"/>
         <p className="mb-4 mx-auto text-center subtitle">
           We're looking for motivated individuals to join our team as independent sales
           professionals. If you're goal-oriented, have a reliable vehicle, and are excited about a
           1099 commission-based opportunity, we'd love to hear from you! Answer the quick
           questionnaire below to see if you're a great fit for this exciting role.
         </p>
-
-        <hr className="w-50 m-auto" />
 
         <Steps activeStep={activeStep} hasCompletedBooking={hasCompletedBooking} />
 

@@ -1,7 +1,10 @@
-@use '../../variables';
+@use '../../variables' as vars;
 .trusted{
-  background-image: variables.$white;
-  border-bottom: 1px solid variables.$border-active;
+  background-color: vars.$black;
+  border-bottom: 1px solid vars.$border-active;
+  h2.section-title{
+    color: vars.$white;
+  }
 }
 
 .swiper-container {

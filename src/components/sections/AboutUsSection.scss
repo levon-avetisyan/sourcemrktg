@@ -14,6 +14,8 @@
 
 
 .about-icon-wrapper{
+  background-color: variables.$black;
+  border-radius: 16px;
   i {
     color: variables.$sand-brown;
     font-size: 52px;
@@ -36,8 +38,19 @@
 
 @media (max-width: 1200px) {
   .about-icon-wrapper {
+    i {
+      font-size: 34px;
+    }
     p {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    .btn-lg {
+      margin-bottom: 40px;
     }
   }
 }

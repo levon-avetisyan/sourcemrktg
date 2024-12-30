@@ -14,6 +14,7 @@ const AboutSection = () => {
         <div className="row align-items-center">
           <div className="col-md-6">
             <h2 className="mb-3 section-title">About Us</h2>
+            <hr className="hr-break mx-0"/>
             <p className="mb-4 subtitle fs-5p">
               At Source Marketing, we empower our employees by being the cornerstone of their
               professional and personal growth. We are committed to providing opportunities,
@@ -22,16 +23,15 @@ const AboutSection = () => {
               culture of continuous learning and innovation, we strive to be the source of
               inspiration and success for our clients, our team, and our community.
             </p>
-            <a href="#values" className="btn btn-rounded-border btn-dark btn-lg py-3 px-5">
+            <a href="#values" className="btn btn-rounded-border btn-light btn-lg py-3 px-5">
               Our values
             </a>
           </div>
-
           <div className="col-md-6">
             <div className="row">
               {icons.map((icon, index) => (
                 <div className="col-6 mb-4" key={index}>
-                  <div className="about-icon-wrapper bg-dark text-center p-4 rounded">
+                  <div className="about-icon-wrapper text-center p-4">
                     <i className={`bi bi-${icon.name}`}></i>
                     <p className="mt-3">{icon.description}</p>
                   </div>

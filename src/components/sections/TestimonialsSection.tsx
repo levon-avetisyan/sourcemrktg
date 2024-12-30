@@ -41,24 +41,43 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="testimonials">
-      <div className="container">
         <h2 className="text-center mb-4 section-title mb-5">What Our Clients Say</h2>
+        <hr className="hr-break mx-auto"/>
         <Swiper
           modules={[Pagination]}
           spaceBetween={50}
           slidesPerView={3}
           pagination={{ clickable: true }}
           navigation={false}
+          style={{
+            paddingRight: '30px', // Adjust the padding to increase space
+            paddingLeft: '30px', // Adjust the padding to increase space
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+          }}
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div className="review-wrapper">
-                {/*<img*/}
-                {/*  src={testimonial.image}*/}
-                {/*  alt={testimonial.name}*/}
-                {/*  className="rounded-circle mb-3 bg-dark"*/}
-                {/*  style={{ width: '100px', height: '100px' }}*/}
-                {/*/>*/}
+                {/* Uncomment and customize the image if needed */}
+                {/*<img
+          src={testimonial.image}
+          alt={testimonial.name}
+          className="rounded-circle mb-3 bg-dark"
+          style={{ width: '100px', height: '100px' }}
+        />*/}
                 <div className="client-info">
                   <i className="bi bi-quote"></i>
                   <h5 className="client-name">{testimonial.name}</h5>
@@ -69,7 +88,6 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
     </section>
   );
 };
