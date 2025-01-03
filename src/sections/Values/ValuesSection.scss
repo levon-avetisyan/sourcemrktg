@@ -1,0 +1,62 @@
+@use '../../styles/variables';
+
+.values {
+  background: #2f4d41;
+  background: -webkit-linear-gradient(38deg, #2f4d41 20%, #11151c 80%);
+  background: linear-gradient(35deg, #2f4d41 20%, #11151c 80%);
+  .subtitle {
+    color: variables.$white;
+    margin-bottom: 60px;
+  }
+  .value-card {
+    min-height: 100%;
+    border-radius: 16px;
+    padding: 20px 40px 30px;
+    background: variables.$black;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.19),
+      0 6px 6px rgba(0, 0, 0, 0.23);
+    box-sizing: border-box;
+    .img-wrapper {
+      width: 100%;
+      max-width: 134px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    h5 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: variables.$white;
+    }
+    p {
+      font-family: 'Roboto', sans-serif;
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 0;
+      color: variables.$white;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .values {
+    .value-card {
+      max-width: 100%;
+    }
+  }
+}

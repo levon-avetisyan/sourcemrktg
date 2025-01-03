@@ -1,0 +1,55 @@
+@use '../../styles/variables';
+
+.about {
+  background: variables.$pine-green;
+  background: -webkit-linear-gradient(152deg, variables.$pine-green 20%, #11151c 80%);
+  background: linear-gradient(155deg, variables.$pine-green 20%, #11151c 80%);
+  color: white;
+}
+
+.about-img-wrapper {
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+}
+
+.about-icon-wrapper {
+  background-color: variables.$black;
+  border-radius: 16px;
+  i {
+    color: variables.$sand-brown;
+    font-size: 52px;
+  }
+  p {
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+@media (max-width: 1400px) {
+  .about-icon-wrapper {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-icon-wrapper {
+    i {
+      font-size: 34px;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    .btn-lg {
+      margin-bottom: 40px;
+    }
+  }
+}

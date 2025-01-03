@@ -1,0 +1,32 @@
+@use '../../styles/variables' as vars;
+.trusted {
+  background-color: vars.$black;
+  border-bottom: 1px solid vars.$border-active;
+  h2.section-title {
+    color: vars.$white;
+  }
+}
+
+.swiper-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  .swiper {
+    margin-top: 0;
+    padding: 0;
+    .swiper-wrapper {
+      align-items: center;
+    }
+    .swiper-slide {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 170px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 16px;
+      }
+    }
+  }
+}

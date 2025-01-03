@@ -1,0 +1,91 @@
+@use '../../styles/variables' as vars;
+
+.testimonials {
+  background-image: linear-gradient(50deg, #fdfbfb 0%, #ebedee 100%);
+  color: vars.$black;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: vars.$white;
+    font-size: 20px;
+  }
+  .swiper-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: vars.$neutralLight;
+    border-radius: 0;
+    width: 50px;
+    height: 3px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: vars.$sand-brown;
+  }
+
+  .swiper-slide {
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+    padding: 0;
+    border-radius: 16px;
+  }
+
+  .swiper {
+    padding: 20px 0;
+    margin-top: 30px;
+  }
+
+  .client-info {
+    background-color: vars.$black;
+    color: vars.$white;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    min-height: 300px;
+    .client-name {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    .client-designation {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .client-feedback {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+    }
+    .bi-quote {
+      position: absolute;
+      top: -34px;
+      left: 0;
+      font-size: 180px;
+      color: vars.$sand-brown;
+      z-index: 1;
+      opacity: 0.3;
+    }
+    .client-name,
+    .client-feedback,
+    .client-designation {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .testimonials {
+    .swiper {
+      margin-top: 0;
+    }
+  }
+}
