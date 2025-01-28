@@ -3,8 +3,17 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: '/',
-  build: {
-    outDir: 'dist', // Ensure your build output directory is set
-  },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        },
+      },
+    },
+    chunkSizeWarningLimit: 900, // Adjust this value if needed
+  },
 });
