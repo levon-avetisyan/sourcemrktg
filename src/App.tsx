@@ -11,12 +11,9 @@ import Dashboard from './pages/Dashboard/Dashboard.tsx';
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route index element={<Home />} />
       <Route path="/" element={<Home />} />
-      <Route path="/sourcemrktg" element={<Home />} />
       <Route path="/daily-progress" element={<DailyProgress />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/sourcemrktg/dashboard" element={<Dashboard />} />
     </Routes>
   );
 };
