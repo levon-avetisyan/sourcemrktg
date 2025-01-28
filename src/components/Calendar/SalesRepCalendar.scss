@@ -1,0 +1,9 @@
+.calendar-container {
+  overflow: hidden;
+  .calendar-iframe {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../../styles/variables' as vars;
+
+.contact {
+  overflow: hidden;
+  background-color: vars.$black;
+
+  h2 {
+    color: white;
+    text-align: center;
+  }
+
+  address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      opacity: 0.8;
+      color: vars.$white;
+    }
+    a {
+      color: vars.$white;
+      opacity: 0.8;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    i {
+      font-size: 18px;
+      color: vars.$sand-brown;
+      opacity: 1;
+    }
+  }
+}

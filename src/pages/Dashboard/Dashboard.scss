@@ -1,0 +1,61 @@
+@use '../../styles/variables.scss' as vars;
+
+.dash-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+}
+
+.btn-collapse-sider {
+  position: absolute;
+  color: vars.$white;
+  font-size: 20px;
+  bottom: 20px;
+  right: 20px;
+  &:hover {
+    color: vars.$white !important;
+  }
+}
+
+.sider {
+  overflow: auto;
+  height: 100vh;
+  position: sticky;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 0;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+}
+
+.header {
+  padding: 0;
+  background: vars.$colorBgContainer;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 0;
+}
+
+.header-button {
+  font-size: 16px;
+  width: 64px;
+  height: 64px;
+}
+
+.content {
+  margin: 24px 16px 0;
+  overflow: initial;
+}
+
+.content-inner {
+  padding: 24px;
+  text-align: center;
+  background: vars.$colorBgContainer;
+  border-radius: vars.$borderRadiusLG;
+}

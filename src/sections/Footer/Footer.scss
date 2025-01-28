@@ -1,0 +1,12 @@
+@use '../../styles/variables' as vars;
+footer {
+  background-color: vars.$black;
+  .footer-nav {
+    opacity: 0.6;
+    font-size: 12px;
+  }
+  .footer-copyright {
+    opacity: 0.6;
+    font-size: 10px;
+  }
+}
