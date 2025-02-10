@@ -1,17 +1,33 @@
 import React from 'react';
 import './Navbar.scss';
 import logo from '../../assets/images/logo.svg';
+import { Link, useLocation } from 'react-router-dom';
 
-interface IProps{
+interface IProps {
   theme?: string;
 }
-const Navbar: React.FC<IProps> = ({theme}) => {
+
+const Navbar: React.FC<IProps> = ({ theme }) => {
+  const location = useLocation();
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      window.location.href = `/#${targetId}`;
+    } else {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav className={`navbar navbar-expand-lg position-absolute navbar-dark ${theme}`}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img src={logo} alt="SourceMRKTG Logo" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,21 +41,46 @@ const Navbar: React.FC<IProps> = ({theme}) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#questionnaire">
+            <Link
+              className="nav-link active"
+              aria-current="page"
+              to="/#questionnaire"
+              onClick={(e) => handleScroll(e, 'questionnaire')}
+            >
               Join us
-            </a>
-            <a className="nav-link  active" aria-current="page" href="#about">
+            </Link>
+            <Link
+              className="nav-link active"
+              aria-current="page"
+              to="/#about"
+              onClick={(e) => handleScroll(e, 'about')}
+            >
               About Us
-            </a>
-            <a className="nav-link active" aria-current="page" href="#values">
+            </Link>
+            <Link
+              className="nav-link active"
+              aria-current="page"
+              to="/#values"
+              onClick={(e) => handleScroll(e, 'values')}
+            >
               Our values
-            </a>
-            <a className="nav-link active" aria-current="page" href="#testimonials">
+            </Link>
+            <Link
+              className="nav-link active"
+              aria-current="page"
+              to="/#testimonials"
+              onClick={(e) => handleScroll(e, 'testimonials')}
+            >
               Testimonials
-            </a>
-            <a className="nav-link active" aria-current="page" href="#contact">
+            </Link>
+            <Link
+              className="nav-link active"
+              aria-current="page"
+              to="/#contact"
+              onClick={(e) => handleScroll(e, 'contact')}
+            >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>

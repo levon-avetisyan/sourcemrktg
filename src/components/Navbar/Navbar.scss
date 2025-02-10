@@ -5,6 +5,13 @@
   background-color: transparent;
   z-index: 200;
   padding-top: 20px;
+  &.dark {
+    background-color: vars.$black;
+    padding-top: 4px;
+    .navbar-nav .nav-link {
+      font-size: 14px;
+    }
+  }
   .navbar-brand {
     padding: 0 0 0 15px;
     margin: 0;

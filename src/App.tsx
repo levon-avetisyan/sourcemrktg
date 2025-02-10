@@ -7,6 +7,8 @@ import './styles/App.scss';
 import Home from './pages/Home/Home.tsx';
 import DailyProgress from './pages/DailyProgres/DailyProgress.tsx';
 import Dashboard from './pages/Dashboard/Dashboard.tsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
+import TermsAndConditions from './pages/TermsAndConditions.tsx';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +16,8 @@ const App: React.FC = () => {
       <Route path="/" element={<Home />} />
       <Route path="/daily-progress" element={<DailyProgress />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
     </Routes>
   );
 };
