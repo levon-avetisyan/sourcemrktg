@@ -1,7 +1,7 @@
 @use '../../styles/variables' as vars;
 .trusted {
   background-color: vars.$black;
-  border-bottom: 1px solid vars.$border-active;
+  border-bottom: 1px solid vars.$border-color;
   h2.section-title {
     color: vars.$white;
   }

@@ -39,11 +39,11 @@ const DailyReportForm: React.FC = () => {
         data-activation-value=""
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
-        data-form-name="Daily Sales Report (Sales reps) - Jeff input."
+        data-form-name="Daily DashboardSalesSection Report (DashboardSalesSection reps) - Jeff input."
         data-height="619"
         data-layout-iframe-id={`inline-${formId}`}
         data-form-id={formId}
-        title="Daily Sales Report (Sales reps) - Jeff input."
+        title="Daily DashboardSalesSection Report (DashboardSalesSection reps) - Jeff input."
         onLoad={() => setIsLoading(false)} // Set loading to false when iframe loads
       />
     </div>

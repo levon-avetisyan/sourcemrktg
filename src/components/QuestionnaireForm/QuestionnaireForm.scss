@@ -1,15 +1,15 @@
-@use '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .questionnaire-form {
   font-family: 'Quicksand', serif;
   max-width: 600px;
-  background: variables.$white;
+  background: $white;
   p {
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 16px;
   }
   .form-label {
-    font-family: 'Quicksand', sans-serif;
+    font-family: $font-family-quicksand;
     font-weight: 700;
   }
   .form-check {
@@ -18,7 +18,7 @@
       cursor: pointer;
     }
     .form-check-label {
-      font-family: 'Quicksand', sans-serif;
+      font-family: $font-family-quicksand;
       width: 100%;
       cursor: pointer;
       font-weight: 700;

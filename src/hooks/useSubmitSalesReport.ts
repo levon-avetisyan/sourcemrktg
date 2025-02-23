@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import axiosClient from '../api/axiosClient';
+import { toast } from 'react-toastify';
 
 interface IFormDataSalesReport {
+  reportDate: string;
+  location: string;
   first_name: string;
   last_name: string;
-  appointments_set: number;
-  inspections_attended: number;
-  time_studied_today: string;
-  attended_company: number;
-  completed_company: number;
-  closed_company: number;
-  attended_self_gen: number;
-  completed_self_gen: number;
-  closed_self_gen: number;
+  doors_knocked: number;
+  inspections_scheduled: number;
+  self_gen_scheduled: number;
+  self_gen_completed: number;
+  self_gen_closed: number;
+  company_leads_received: number;
+  appointments_completed: number;
+  company_leads_closed: number;
+  time_studied_today: number;
+  hardestObjection?: string;
 }
 
 const useSubmitSalesReport = () => {
@@ -20,37 +24,24 @@ const useSubmitSalesReport = () => {
   const [success, setSuccess] = useState(false);
 
   const submit = async (data: IFormDataSalesReport) => {
-    const today = new Date().toISOString().split('T')[0];
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
     setLoading(true);
-    setSuccess(false);
+
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const payload = {
+      ...data,
+      locationId: import.meta.env.VITE_GHL_LOCATION_ID,
+      timezone: timezone,
+    };
 
     try {
-      const response = await axiosClient.post('/contacts/upsert', {
-        firstName: data.first_name,
-        lastName: data.last_name,
-        locationId: import.meta.env.VITE_GHL_LOCATION_ID,
-        timezone: timezone,
-        email: 'levon.s.avetisyan@gmail.com',
-        customFields: [
-          { key: 'appointments_set', field_value: data.appointments_set },
-          { key: 'inspections_attended', field_value: data.inspections_attended },
-          { key: 'time_studied_today', field_value: data.time_studied_today },
-          { key: 'attended_company', field_value: data.attended_company },
-          { key: 'completed_company', field_value: data.completed_company },
-          { key: 'closed_company', field_value: data.closed_company },
-          { key: 'attended_self_gen', field_value: data.attended_self_gen },
-          { key: 'completed_self_gen', field_value: data.completed_self_gen },
-          { key: 'closed_self_gen', field_value: data.closed_self_gen },
-        ],
-        tags: ['daily-report', 'sales-rep', today],
-      });
-      console.log('HighLevel response:', response.data);
-      if (response.data.succeeded || response.data.succeded) {
+      const response = await axiosClient.post('/reports/add', payload);
+
+      if (response?.status === 201) {
+        toast('Report submitted successfully');
         setSuccess(true);
       }
-      return response;
+
+      setLoading(false);
     } catch (error) {
       console.error('Error posting to HighLevel:', error);
       throw error;

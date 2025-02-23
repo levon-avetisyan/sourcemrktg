@@ -1,9 +1,9 @@
-@use '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .about {
-  background: variables.$pine-green;
-  background: -webkit-linear-gradient(152deg, variables.$pine-green 20%, #11151c 80%);
-  background: linear-gradient(155deg, variables.$pine-green 20%, #11151c 80%);
+  background: $pine-green;
+  background: -webkit-linear-gradient(152deg, $pine-green 20%, #11151c 80%);
+  background: linear-gradient(155deg, $pine-green 20%, #11151c 80%);
   color: white;
 }
 
@@ -13,17 +13,17 @@
 }
 
 .about-icon-wrapper {
-  background-color: variables.$black;
+  background-color: $black;
   border-radius: 16px;
   i {
-    color: variables.$sand-brown;
+    color: $sand-brown;
     font-size: 52px;
   }
   p {
     white-space: nowrap;
     font-size: 18px;
     font-weight: 600;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $font-family-quicksand;
   }
 }
 

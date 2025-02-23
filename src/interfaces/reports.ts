@@ -45,12 +45,3 @@ export interface IOthers {
   signatureHash?: string;
   ip?: string;
 }
-
-export interface ISubmission {
-  id: string;
-  contactId: string;
-  formId: string;
-  name: string;
-  others: IOthers;
-  createdAt: string;
-}

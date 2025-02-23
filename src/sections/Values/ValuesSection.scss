@@ -1,18 +1,18 @@
-@use '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .values {
   background: #2f4d41;
   background: -webkit-linear-gradient(38deg, #2f4d41 20%, #11151c 80%);
   background: linear-gradient(35deg, #2f4d41 20%, #11151c 80%);
   .subtitle {
-    color: variables.$white;
+    color: $white;
     margin-bottom: 60px;
   }
   .value-card {
     min-height: 100%;
     border-radius: 16px;
     padding: 20px 40px 30px;
-    background: variables.$black;
+    background: $black;
     max-width: 300px;
     width: 100%;
     margin: 0 auto;
@@ -37,17 +37,17 @@
       }
     }
     h5 {
-      font-family: 'Quicksand', sans-serif;
+      font-family: $font-family-quicksand;
       font-weight: 500;
       font-size: 24px;
-      color: variables.$white;
+      color: $white;
     }
     p {
-      font-family: 'Roboto', sans-serif;
+      font-family: $font-family-roboto;
       text-align: left;
       font-size: 14px;
       margin-bottom: 0;
-      color: variables.$white;
+      color: $white;
       letter-spacing: 2px;
     }
   }

@@ -1,4 +1,4 @@
-@use '../../styles/variables' as vars;
+@use '../../styles/variables' as *;
 
 .steps {
   font-family: 'Quicksand', serif;
@@ -11,11 +11,11 @@
       0 3px 6px rgba(0, 0, 0, 0.23);
     background-color: #2f4d413d;
     &.completed {
-      border: 2px solid vars.$pine-green;
-      background-color: vars.$pine-green;
-      color: vars.$white;
+      border: 2px solid $pine-green;
+      background-color: $pine-green;
+      color: $white;
       .icon i {
-        color: vars.$white;
+        color: $white;
       }
     }
 
@@ -33,28 +33,28 @@
       font-size: 25px;
       width: 25px;
       height: 25px;
-      color: vars.$pine-green;
-      background-color: vars.$white;
+      color: $pine-green;
+      background-color: $white;
       border-radius: 50%;
       line-height: 0;
     }
 
     .card-title.step-number {
-      font-family: 'Lexend Deca', serif;
+      font-family: $font-family-lexend;
       font-size: 20px;
       font-weight: 500;
       margin-bottom: 10px;
     }
 
     .card-title {
-      font-family: 'Lexend Deca', serif;
+      font-family: $font-family-lexend;
       font-size: 16px;
       font-weight: 500;
       margin-bottom: 12px;
     }
 
     .card-text {
-      font-family: 'Roboto', sans-serif;
+      font-family: $font-family-roboto;
       font-size: 16px;
       line-height: 1.2;
       margin-bottom: 12px;
@@ -62,7 +62,7 @@
 
     i {
       font-size: 34px;
-      color: vars.$pine-green;
+      color: $pine-green;
     }
   }
 }

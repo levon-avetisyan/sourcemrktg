@@ -8,9 +8,9 @@ import {
   MenuUnfoldOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Layout, Menu, Button, Image, Avatar } from 'antd';
-import Logo from '../../assets/images/logo.svg';
-import SalesReportTable from './components/SalesReportTable';
+import { Layout, Menu, Button, Avatar } from 'antd';
+import Lotus from '../../assets/lotus.png';
+import DashboardSalesSection from './components/DashboardSalesSection.tsx';
 
 const { Header, Content, Sider } = Layout;
 
@@ -18,7 +18,7 @@ const items: MenuProps['items'] = [
   {
     key: '1',
     icon: <BarChartOutlined />,
-    label: 'Sales Report',
+    label: 'Sales',
   },
   {
     key: '2',
@@ -34,7 +34,7 @@ const Dashboard: React.FC = () => {
   const renderContent = () => {
     switch (activeMenuItem) {
       case '1':
-        return <SalesReportTable />;
+        return <DashboardSalesSection />;
       case '2':
         return <div>Dashboard Content</div>;
       default:
@@ -46,11 +46,14 @@ const Dashboard: React.FC = () => {
     <Layout hasSider>
       <Sider className="sider" collapsed={collapsed}>
         <div className="dash-logo">
-          <Image src={Logo} width={!collapsed ? 144 : 60} height={!collapsed ? 24 : 10} />
+          <div className={`logo ${collapsed ? 'collapsed' : ''}`}>
+            <img src={Lotus} alt="Source MRKTG company logo" />
+            source.
+          </div>
         </div>
         <Menu
           className="sider-nav"
-          theme="dark"
+          theme="light"
           mode="inline"
           defaultSelectedKeys={['1']}
           items={items}

@@ -23,7 +23,7 @@ const useContactsData = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axiosClient.get('/contacts/', {
+        const response = await axiosClient.get('/api/contacts/', {
           params: {
             locationId: import.meta.env.VITE_GHL_LOCATION_ID,
             limit: 100,
