@@ -2,7 +2,7 @@ import React from 'react';
 import { Input, Select, Row, Col, DatePicker } from 'antd';
 import { SearchOutlined, EnvironmentOutlined, CalendarOutlined } from '@ant-design/icons';
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import { locations } from '../../../components/ReportForm/constants';
+import { locations } from '../../../../../components/ReportForm/constants.ts';
 
 interface SalesTableProps {
   searchQuery: string;

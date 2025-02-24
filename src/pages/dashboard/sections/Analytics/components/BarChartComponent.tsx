@@ -1,6 +1,6 @@
 import { BarChart } from '@mui/x-charts/BarChart';
 import { axisClasses } from '@mui/x-charts/ChartsAxis';
-import { dataset, valueFormatter } from './barchart-dataset.ts';
+import { dataset, valueFormatter } from '../datasets/barchart-dataset.ts';
 
 const chartSetting = {
   yAxis: [

@@ -49,7 +49,7 @@ const SalesRepCalendar: React.FC<IProps> = ({ setHasCompletedBooking }) => {
         src="https://api.leadconnectorhq.com/widget/booking/BlWMky4bBl76lsw1xxLW"
         scrolling="no"
         id="msgsndr-calendar"
-        title="DashboardSalesSection Representative Calendar"
+        title="SalesSection Representative Calendar"
       ></iframe>
     </div>
   );

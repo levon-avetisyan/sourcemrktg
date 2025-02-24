@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import SalesTable from './SalesTable.tsx';
-import { progressFormFields } from '../../../components/ReportForm/constants';
-import useReports from '../../../hooks/useReports.ts';
-import { IReport } from '../../../interfaces';
+import { progressFormFields } from '../../../../../components/ReportForm/constants.ts';
+import useReports from '../../../../../hooks/useReports.ts';
+import { IReport } from '../../../../../interfaces';
 
 const Table: React.FC = () => {
   const { data } = useReports();

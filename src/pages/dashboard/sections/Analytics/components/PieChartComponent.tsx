@@ -1,5 +1,5 @@
 import { PieChart } from '@mui/x-charts/PieChart';
-import { desktopOS, valueFormatter } from './piechart-dataset.ts';
+import { desktopOS, valueFormatter } from '../datasets/piechart-dataset.ts';
 
 const PieChartComponent = () => {
   return (
