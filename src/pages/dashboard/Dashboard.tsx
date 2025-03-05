@@ -1,16 +1,75 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './pages/Main/Main.scss';
-import Main from './pages/Main/Main.tsx';
-import Login from './pages/Login/Login.tsx';
+import React, { useState } from 'react';
+import './Dashboard.scss';
+import { BarChartOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Button, Layout, Menu } from 'antd';
+import Lotus from '../../assets/lotus.png';
+import { AnalyticsOutlined } from '@mui/icons-material';
+import DashboardHeader from './components/DashboardHeader.tsx';
+import SalesSection from './sections/Sales/SalesSection.tsx';
+import AnalyticsSection from './sections/Analytics/AnalyticsSection.tsx';
+
+const { Content, Sider } = Layout;
+
+const items: MenuProps['items'] = [
+  {
+    key: '1',
+    icon: <BarChartOutlined />,
+    label: 'Sales',
+  },
+  {
+    key: '2',
+    icon: <AnalyticsOutlined />,
+    label: 'Analytics',
+  },
+];
 
 const Dashboard: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const [activeMenuItem, setActiveMenuItem] = useState('1');
+
+  const renderContent = () => {
+    switch (activeMenuItem) {
+      case '1':
+        return <SalesSection />;
+      case '2':
+        return <AnalyticsSection />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="login" element={<Login />} />
-      {/*<Route path="register" element={<Register />} />*/}
-    </Routes>
+    <Layout hasSider>
+      <Sider className="sider" collapsed={collapsed}>
+        <div className="dash-logo">
+          <div className={`logo ${collapsed ? 'collapsed' : ''}`}>
+            <img src={Lotus} alt="Source MRKTG company logo" />
+            source.
+          </div>
+        </div>
+        <Menu
+          className="sider-nav"
+          theme="light"
+          mode="inline"
+          defaultSelectedKeys={['1']}
+          items={items}
+          onClick={(e) => setActiveMenuItem(e.key)}
+        />
+        <Button
+          className="btn-collapse-sider"
+          type="text"
+          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+          onClick={() => setCollapsed(!collapsed)}
+        />
+      </Sider>
+      <Layout>
+        <DashboardHeader collapsed={collapsed} setCollapsed={setCollapsed} />
+        <Content className="content">
+          <div className="content-inner">{renderContent()}</div>
+        </Content>
+      </Layout>
+    </Layout>
   );
 };
 

@@ -1,43 +1,33 @@
-import React from 'react';
-import { Row, Col, Card } from 'antd';
+import React, { useState } from 'react';
 import Table from './components/Table.tsx';
+import useReports from '../../../../hooks/useReports.ts';
+import ReportsSummary from './components/ReportsSummary.tsx';
 
 const SalesSection: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedLocation, setSelectedLocation] = useState<string>('');
+  const [dateRange, setDateRange] = useState<[Date, Date] | null>(null);
+  const { data, loading, setPage, setPageSize, pageSize } = useReports(
+    searchQuery,
+    selectedLocation,
+    dateRange
+  );
   return (
     <>
-      <Row gutter={[16, 16]} style={{ marginBottom: '1rem' }}>
-        <Col xs={24} sm={12} md={6}>
-          <Card>
-            <h6>Total Doors Knocked</h6>
-            <h5>200</h5>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={6}>
-          <Card>
-            <h6>Appointments Completed</h6>
-            <h5>100</h5>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={6}>
-          <Card>
-            <h6>
-              Total Scheduled <small>(Self-Gen)</small>
-            </h6>
-            <h5>200</h5>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={6}>
-          <Card>
-            <h6>
-              Total Completed <small>(Self-Gen)</small>
-            </h6>
-            <h5>200</h5>
-          </Card>
-        </Col>
-      </Row>
-
-      {/* Table Component */}
-      <Table />
+      <ReportsSummary data={data} />
+      <Table
+        data={data}
+        loading={loading}
+        setPage={setPage}
+        setPageSize={setPageSize}
+        pageSize={pageSize}
+        setSearchQuery={setSearchQuery}
+        setSelectedLocation={setSelectedLocation}
+        setDateRange={setDateRange}
+        selectedLocation={selectedLocation}
+        dateRange={dateRange}
+        searchQuery={searchQuery}
+      />
     </>
   );
 };

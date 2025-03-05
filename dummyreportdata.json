@@ -1,0 +1,2442 @@
+[
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152db9c"
+    },
+    "locationId": "YUUjMtEJgZPpGbXHDDb2",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Devyn",
+    "lastName": "Tate",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Jessica Brown",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000001"
+        }
+      },
+      {
+        "customerName": "Sara Smith",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Some other reason",
+        "_id": {
+          "$oid": "000000000000000000000002"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Jack White",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000041"
+        }
+      },
+      {
+        "customerName": "Alan Turing",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000042"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T08:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T08:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152db9d"
+    },
+    "locationId": "AXYZf12345",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Michael Green",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000003"
+        }
+      },
+      {
+        "customerName": "Laura Blue",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer was busy",
+        "_id": {
+          "$oid": "000000000000000000000004"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Chris Red",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000043"
+        }
+      },
+      {
+        "customerName": "Patricia Yellow",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000044"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T08:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T08:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152db9e"
+    },
+    "locationId": "BVCXz98765",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Bob",
+    "lastName": "Williams",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Emily Clark",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Scheduling conflict",
+        "_id": {
+          "$oid": "000000000000000000000005"
+        }
+      },
+      {
+        "customerName": "Daniel Moore",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000006"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Olivia Martinez",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000045"
+        }
+      },
+      {
+        "customerName": "Liam Robinson",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000046"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T09:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T09:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152db9f"
+    },
+    "locationId": "QWERty5678",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Carol",
+    "lastName": "King",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Sophia Turner",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000007"
+        }
+      },
+      {
+        "customerName": "Ethan Harris",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Rescheduled appointment",
+        "_id": {
+          "$oid": "000000000000000000000008"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Mason Lee",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000047"
+        }
+      },
+      {
+        "customerName": "Ava Walker",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000048"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T09:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T09:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba0"
+    },
+    "locationId": "MNOPqr1234",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "David",
+    "lastName": "Smith",
+    "doorsKnocked": 3,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Olivia Brown",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000009"
+        }
+      },
+      {
+        "customerName": "Ethan Davis",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested reschedule",
+        "_id": {
+          "$oid": "00000000000000000000000a"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Isabella Wilson",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000049"
+        }
+      },
+      {
+        "customerName": "Jacob Martinez",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "00000000000000000000004a"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T10:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T10:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba1"
+    },
+    "locationId": "LKJHgf0987",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "doorsKnocked": 8,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Liam Scott",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer delayed",
+        "_id": {
+          "$oid": "00000000000000000000000b"
+        }
+      },
+      {
+        "customerName": "Emma Price",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "00000000000000000000000c"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Noah Bell",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "00000000000000000000004b"
+        }
+      },
+      {
+        "customerName": "Ava Adams",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "00000000000000000000004c"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T10:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T10:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba2"
+    },
+    "locationId": "ZXCVbnm5678",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Frank",
+    "lastName": "Brown",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Charlotte Evans",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "00000000000000000000000d"
+        }
+      },
+      {
+        "customerName": "Amelia Foster",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Reschedule needed",
+        "_id": {
+          "$oid": "00000000000000000000000e"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Benjamin Cooper",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "00000000000000000000004d"
+        }
+      },
+      {
+        "customerName": "Sofia Rivera",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "00000000000000000000004e"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T11:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T11:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba3"
+    },
+    "locationId": "ASDFghj1234",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Grace",
+    "lastName": "Wilson",
+    "doorsKnocked": 9,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Harper Lee",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Client postponed",
+        "_id": {
+          "$oid": "00000000000000000000000f"
+        }
+      },
+      {
+        "customerName": "Ella King",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000010"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Logan Scott",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "00000000000000000000004f"
+        }
+      },
+      {
+        "customerName": "Zoe Mitchell",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000050"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T11:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T11:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba4"
+    },
+    "locationId": "POIUYT5678",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Henry",
+    "lastName": "Moore",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Victoria Allen",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Rescheduled by client",
+        "_id": {
+          "$oid": "000000000000000000000011"
+        }
+      },
+      {
+        "customerName": "Owen Carter",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000012"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Chloe Perez",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000051"
+        }
+      },
+      {
+        "customerName": "Elijah Roberts",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000052"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T12:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T12:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba5"
+    },
+    "locationId": "MNBVCX4321",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "Ivy",
+    "lastName": "Taylor",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Samuel Brooks",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000013"
+        }
+      },
+      {
+        "customerName": "Megan Foster",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Late arrival",
+        "_id": {
+          "$oid": "000000000000000000000014"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Oliver Reed",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000053"
+        }
+      },
+      {
+        "customerName": "Emma Stone",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000054"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T12:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T12:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba6"
+    },
+    "locationId": "QAZwsx9876",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Jack",
+    "lastName": "Anderson",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Avery Collins",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Traffic delays",
+        "_id": {
+          "$oid": "000000000000000000000015"
+        }
+      },
+      {
+        "customerName": "Jordan Bailey",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000016"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Riley Morgan",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000055"
+        }
+      },
+      {
+        "customerName": "Sydney Carter",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000056"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T13:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T13:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba7"
+    },
+    "locationId": "EDCrfv1234",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Kate",
+    "lastName": "Thomas",
+    "doorsKnocked": 8,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Adam Wright",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000017"
+        }
+      },
+      {
+        "customerName": "Molly Bennett",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Schedule conflict",
+        "_id": {
+          "$oid": "000000000000000000000018"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Dylan Sanders",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000057"
+        }
+      },
+      {
+        "customerName": "Zoey Patterson",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000058"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T13:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T13:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba8"
+    },
+    "locationId": "RFVTGB5678",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Luke",
+    "lastName": "Jackson",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Nathan Hayes",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Weather issues",
+        "_id": {
+          "$oid": "000000000000000000000019"
+        }
+      },
+      {
+        "customerName": "Samantha Reed",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "00000000000000000000001a"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Ethan Powell",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000059"
+        }
+      },
+      {
+        "customerName": "Mia Bryant",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "00000000000000000000005a"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T14:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T14:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dba9"
+    },
+    "locationId": "YHNujm1234",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Mia",
+    "lastName": "White",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Elijah Fisher",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Double booked",
+        "_id": {
+          "$oid": "00000000000000000000001b"
+        }
+      },
+      {
+        "customerName": "Zachary Brooks",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "00000000000000000000001c"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Lily Morgan",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "00000000000000000000005b"
+        }
+      },
+      {
+        "customerName": "Caleb Ross",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "00000000000000000000005c"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T14:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T14:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dbaa"
+    },
+    "locationId": "IKOLp0987",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "Noah",
+    "lastName": "Harris",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Grace Kelly",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "00000000000000000000001d"
+        }
+      },
+      {
+        "customerName": "Owen Brooks",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Timing issue",
+        "_id": {
+          "$oid": "00000000000000000000001e"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Isabella Carter",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "00000000000000000000005d"
+        }
+      },
+      {
+        "customerName": "Lucas Reed",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "00000000000000000000005e"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T15:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T15:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dbab"
+    },
+    "locationId": "UJMKlo5678",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Olivia",
+    "lastName": "Martin",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Evelyn Perry",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Rescheduled",
+        "_id": {
+          "$oid": "00000000000000000000001f"
+        }
+      },
+      {
+        "customerName": "Henry Cox",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000020"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Amelia Ward",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "00000000000000000000005f"
+        }
+      },
+      {
+        "customerName": "Ethan James",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000060"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T15:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T15:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dbac"
+    },
+    "locationId": "EDCRfv3456",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Peter",
+    "lastName": "Lee",
+    "doorsKnocked": 9,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Victoria Diaz",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000021"
+        }
+      },
+      {
+        "customerName": "Samuel Kim",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "000000000000000000000022"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Chloe Morris",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000061"
+        }
+      },
+      {
+        "customerName": "Daniel Rogers",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000062"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T16:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T16:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dbad"
+    },
+    "locationId": "WSXqaz1234",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Quinn",
+    "lastName": "Young",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Aiden Ross",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Miscommunication",
+        "_id": {
+          "$oid": "000000000000000000000023"
+        }
+      },
+      {
+        "customerName": "Sienna Brooks",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000024"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Gabriel Stewart",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000063"
+        }
+      },
+      {
+        "customerName": "Hannah Price",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000064"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T16:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T16:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dbae"
+    },
+    "locationId": "OKMijn7890",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Rachel",
+    "lastName": "Clark",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Aaron Griffin",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer rescheduled",
+        "_id": {
+          "$oid": "000000000000000000000025"
+        }
+      },
+      {
+        "customerName": "Zoe Harper",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000026"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Landon Webb",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000065"
+        }
+      },
+      {
+        "customerName": "Avery Chapman",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000066"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T17:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T17:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67c2c4eb696a0c3b7152dbaf"
+    },
+    "locationId": "PLOKij5678",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "Samuel",
+    "lastName": "Lewis",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Isabel Murray",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "000000000000000000000027"
+        }
+      },
+      {
+        "customerName": "Evan Fisher",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer unresponsive",
+        "_id": {
+          "$oid": "000000000000000000000028"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Luna Price",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "000000000000000000000067"
+        }
+      },
+      {
+        "customerName": "Eli Turner",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "000000000000000000000068"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-01T17:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-01T17:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000001"
+    },
+    "locationId": "LOC_1",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Liam",
+    "lastName": "Johnson",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Alex Carter",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000001"
+        }
+      },
+      {
+        "customerName": "Uma Davis",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000002"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Olivia Harris",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000001"
+        }
+      },
+      {
+        "customerName": "Iris Young",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000002"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T08:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T08:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000002"
+    },
+    "locationId": "LOC_2",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Emma",
+    "lastName": "Brown",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Brian Adams",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000003"
+        }
+      },
+      {
+        "customerName": "Victor Allen",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000004"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Peter Smith",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000003"
+        }
+      },
+      {
+        "customerName": "Jackie Martin",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000004"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T08:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T08:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000003"
+    },
+    "locationId": "LOC_3",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Noah",
+    "lastName": "Williams",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Cathy Lee",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000005"
+        }
+      },
+      {
+        "customerName": "Wendy Parker",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000006"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Quinn Allen",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000005"
+        }
+      },
+      {
+        "customerName": "Karl Nelson",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000006"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T08:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T08:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000004"
+    },
+    "locationId": "LOC_4",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Olivia",
+    "lastName": "Jones",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Derek Scott",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000007"
+        }
+      },
+      {
+        "customerName": "Xander Brooks",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000008"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Rachel Johnson",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000007"
+        }
+      },
+      {
+        "customerName": "Lara Perez",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000008"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T08:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T08:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000005"
+    },
+    "locationId": "LOC_5",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "William",
+    "lastName": "Garcia",
+    "doorsKnocked": 3,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Eva Green",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000009"
+        }
+      },
+      {
+        "customerName": "Yvonne Morris",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "20000000000000000000000a"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Sam Wilson",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000009"
+        }
+      },
+      {
+        "customerName": "Milo Reed",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "30000000000000000000000a"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T09:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T09:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000006"
+    },
+    "locationId": "LOC_6",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Ava",
+    "lastName": "Martinez",
+    "doorsKnocked": 8,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Fiona Bell",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "20000000000000000000000b"
+        }
+      },
+      {
+        "customerName": "Zack Carter",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "20000000000000000000000c"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Tara King",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "30000000000000000000000b"
+        }
+      },
+      {
+        "customerName": "Nora Scott",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "30000000000000000000000c"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T09:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T09:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000007"
+    },
+    "locationId": "LOC_7",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "James",
+    "lastName": "Rodriguez",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "George Young",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "20000000000000000000000d"
+        }
+      },
+      {
+        "customerName": "Amy Robinson",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "20000000000000000000000e"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Umar Lewis",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "30000000000000000000000d"
+        }
+      },
+      {
+        "customerName": "Owen Taylor",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "30000000000000000000000e"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T09:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T09:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000008"
+    },
+    "locationId": "LOC_8",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Isabella",
+    "lastName": "Davis",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Hannah King",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "20000000000000000000000f"
+        }
+      },
+      {
+        "customerName": "Blake Mitchell",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000010"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Violet Martin",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "30000000000000000000000f"
+        }
+      },
+      {
+        "customerName": "Pia Thomas",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000010"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T09:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T09:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000009"
+    },
+    "locationId": "LOC_9",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Logan",
+    "lastName": "Miller",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Ian Wright",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000011"
+        }
+      },
+      {
+        "customerName": "Cory Evans",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000012"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Will Turner",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000011"
+        }
+      },
+      {
+        "customerName": "Quinn Walker",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000012"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T10:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T10:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10000000000000000000000a"
+    },
+    "locationId": "LOC_10",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "Sophia",
+    "lastName": "Wilson",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Julia Baker",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000013"
+        }
+      },
+      {
+        "customerName": "Daisy Reed",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000014"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Ralph Wood",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000013"
+        }
+      },
+      {
+        "customerName": "Seth Allen",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000014"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T10:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T10:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10000000000000000000000b"
+    },
+    "locationId": "LOC_11",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Benjamin",
+    "lastName": "Moore",
+    "doorsKnocked": 9,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Kevin Davis",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000015"
+        }
+      },
+      {
+        "customerName": "Faith Cox",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000016"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Yosef Adams",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000015"
+        }
+      },
+      {
+        "customerName": "Tina Brown",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000016"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T10:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T10:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10000000000000000000000c"
+    },
+    "locationId": "LOC_12",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Mia",
+    "lastName": "Taylor",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Linda Harris",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000017"
+        }
+      },
+      {
+        "customerName": "Blake Mitchell",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000018"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Zara Baker",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000017"
+        }
+      },
+      {
+        "customerName": "Jackie Martin",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000018"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T10:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10000000000000000000000d"
+    },
+    "locationId": "LOC_13",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Elijah",
+    "lastName": "Anderson",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Mark Nelson",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000019"
+        }
+      },
+      {
+        "customerName": "Gina Gray",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "20000000000000000000001a"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Aaron Cooper",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000019"
+        }
+      },
+      {
+        "customerName": "Bella Carter",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "30000000000000000000001a"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T11:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T11:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10000000000000000000000e"
+    },
+    "locationId": "LOC_14",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Charlotte",
+    "lastName": "Thomas",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Nina Perez",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "20000000000000000000001b"
+        }
+      },
+      {
+        "customerName": "Henry Foster",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "20000000000000000000001c"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Calvin Davis",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "30000000000000000000001b"
+        }
+      },
+      {
+        "customerName": "Bella Carter",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "30000000000000000000001c"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T11:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T11:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10000000000000000000000f"
+    },
+    "locationId": "LOC_15",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "Lucas",
+    "lastName": "Jackson",
+    "doorsKnocked": 4,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Oscar Reed",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "20000000000000000000001d"
+        }
+      },
+      {
+        "customerName": "Ivy Powell",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "20000000000000000000001e"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Seth Allen",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "30000000000000000000001d"
+        }
+      },
+      {
+        "customerName": "Xena Foster",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "30000000000000000000001e"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T11:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T11:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000010"
+    },
+    "locationId": "LOC_16",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago South",
+    "firstName": "Amelia",
+    "lastName": "White",
+    "doorsKnocked": 8,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Paula Moore",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "20000000000000000000001f"
+        }
+      },
+      {
+        "customerName": "Jack Simmons",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000020"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Diana Evans",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "30000000000000000000001f"
+        }
+      },
+      {
+        "customerName": "Pia Thomas",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000020"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T11:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T11:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000011"
+    },
+    "locationId": "LOC_17",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago North",
+    "firstName": "Mason",
+    "lastName": "Harris",
+    "doorsKnocked": 5,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Quentin Smith",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000021"
+        }
+      },
+      {
+        "customerName": "Karen Bell",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000022"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Yara Green",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000021"
+        }
+      },
+      {
+        "customerName": "Walt Evans",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000022"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T12:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T12:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000012"
+    },
+    "locationId": "LOC_18",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago East",
+    "firstName": "Harper",
+    "lastName": "Martin",
+    "doorsKnocked": 6,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Rita Cooper",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000023"
+        }
+      },
+      {
+        "customerName": "Leo Price",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000024"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Zane Hill",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000023"
+        }
+      },
+      {
+        "customerName": "Aiden James",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000024"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T12:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T12:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000013"
+    },
+    "locationId": "LOC_19",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago West",
+    "firstName": "Ethan",
+    "lastName": "Thompson",
+    "doorsKnocked": 7,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Steve Turner",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000025"
+        }
+      },
+      {
+        "customerName": "Megan Ward",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000026"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Gavin Hill",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000025"
+        }
+      },
+      {
+        "customerName": "Bianca King",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000026"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T12:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T12:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100000000000000000000014"
+    },
+    "locationId": "LOC_20",
+    "timezone": "Asia/Yerevan",
+    "reportDate": {
+      "$date": "2025-02-28T20:00:00.000Z"
+    },
+    "location": "Chicago Downtown",
+    "firstName": "Evelyn",
+    "lastName": "Lee",
+    "doorsKnocked": 9,
+    "inspectionsScheduledCount": 2,
+    "companyLeadsReceivedCount": 2,
+    "scheduledInspections": [
+      {
+        "customerName": "Tina Brooks",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "negativeOutcomeReason": "unsatisfiedCustomer",
+        "_id": {
+          "$oid": "200000000000000000000027"
+        }
+      },
+      {
+        "customerName": "Nate Coleman",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "notClosed",
+        "negativeOutcomeReason": "other",
+        "otherReasonNegativeOutcome": "Customer requested change",
+        "_id": {
+          "$oid": "200000000000000000000028"
+        }
+      }
+    ],
+    "companyLeadsReceived": [
+      {
+        "customerName": "Hazel Ingram",
+        "appointmentOutcome": "noShow",
+        "_id": {
+          "$oid": "300000000000000000000027"
+        }
+      },
+      {
+        "customerName": "Bianca King",
+        "appointmentOutcome": "completedInspection",
+        "inspectionOutcome": "closed",
+        "_id": {
+          "$oid": "300000000000000000000028"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-03-02T12:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-02T12:45:00.000Z"
+    },
+    "__v": 0
+  }
+]

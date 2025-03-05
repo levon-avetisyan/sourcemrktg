@@ -1,13 +1,14 @@
 import React from 'react';
-import { Avatar, Button, Layout, Dropdown, MenuProps } from 'antd';
+import { Avatar, Button, Dropdown, Layout, MenuProps } from 'antd';
 import {
+  LogoutOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UserOutlined,
-  LogoutOutlined,
-  SettingOutlined,
   ProfileOutlined,
+  SettingOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
+import useAuth from '../../../hooks/useAuth.ts';
 
 interface IProps {
   collapsed: boolean;
@@ -17,7 +18,7 @@ interface IProps {
 const { Header } = Layout;
 
 const DashboardHeader: React.FC<IProps> = ({ collapsed, setCollapsed }) => {
-  // Define menu items for the dropdown with icons and actions
+  const { logout } = useAuth();
   const items: MenuProps['items'] = [
     {
       key: '1',
@@ -40,7 +41,7 @@ const DashboardHeader: React.FC<IProps> = ({ collapsed, setCollapsed }) => {
     {
       key: '4',
       icon: <LogoutOutlined />, // Icon for Logout
-      label: <span onClick={() => console.log('Logout action triggered!')}>Logout</span>,
+      label: <span onClick={() => logout()}>Logout</span>,
     },
   ];
 
