@@ -36,6 +36,12 @@ const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
         <>
           <p style={{ margin: '4px 0', color: '#555' }}>
             <strong>
+              <UserOutlined /> Customer ID:{' '}
+            </strong>
+            {item.customerId}
+          </p>
+          <p style={{ margin: '4px 0', color: '#555' }}>
+            <strong>
               <HomeOutlined /> Appointment:{' '}
             </strong>
             {APPOINTMENT_OUTCOME[item.appointmentOutcome as keyof typeof APPOINTMENT_OUTCOME]}

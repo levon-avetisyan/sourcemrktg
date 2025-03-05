@@ -171,7 +171,7 @@ const ReportForm = () => {
             </Form.Item>
           </Col>
           {/* If outcome is completed inspection */}
-          {hasCompletedInspection[fieldName]?.includes(index) && (
+          {hasCompletedInspection && hasCompletedInspection[fieldName]?.includes(index) && (
             <>
               <Col xs={24} lg={12}>
                 <Form.Item
@@ -193,7 +193,7 @@ const ReportForm = () => {
                 </Form.Item>
               </Col>
               {/* If "other" selected, show text input */}
-              {hasNegativeOutcome[fieldName]?.includes(index) && (
+              {hasNegativeOutcome && hasNegativeOutcome[fieldName]?.includes(index) && (
                 <>
                   <Col xs={24} lg={24}>
                     {/*Select the reason of the negative outcome */}
@@ -214,12 +214,12 @@ const ReportForm = () => {
                         ))}
                         {/* Additional "Other" option with a unique key */}
                         <Select.Option key={`other-${fieldName}`} value="other">
-                          Other
+                          Other (please specify the reason)
                         </Select.Option>
                       </Select>
                     </Form.Item>
                   </Col>
-                  {hasOtherReason[fieldName]?.includes(index) && (
+                  {hasOtherReason && hasOtherReason[fieldName]?.includes(index) && (
                     <Col xs={24} lg={24}>
                       <Form.Item
                         name={`other_reason_negative_outcome_${fieldName}_${index}`}
