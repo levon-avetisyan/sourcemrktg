@@ -18,10 +18,6 @@ const useReports = (searchQuery = '', location = '', dateRange: [Date, Date] | n
   const [page, setPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(10);
 
-  useEffect(() => {
-    console.log('data: ', data);
-  }, [data]);
-
   const fetchReports = async (page: number, pageSize: number) => {
     try {
       setLoading(true);

@@ -1,4 +1,6 @@
 export interface IScheduledInspection {
+  installDate?: string;
+  closedOption?: string;
   customerId: string;
   customerName: string;
   appointmentOutcome: string; // e.g. "noShow" | "completedInspection"
@@ -8,6 +10,8 @@ export interface IScheduledInspection {
 }
 
 export interface ICompanyLead {
+  installDate?: string;
+  closedOption?: string;
   customerId: string;
   customerName: string;
   appointmentOutcome: string; // e.g. "noShow" | "completedInspection"
@@ -19,7 +23,7 @@ export interface ICompanyLead {
 export interface IReportData {
   reportDate: string; // or Date if you parse it
   location: string;
-  customerId: string;
+  customerId?: string;
   firstName: string;
   lastName: string;
   doorsKnocked: number;

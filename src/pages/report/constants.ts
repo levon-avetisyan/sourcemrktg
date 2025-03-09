@@ -225,7 +225,7 @@ export const progressFormFields = [
     gridSpan: 12,
   },
   {
-    name: 'first_name',
+    name: 'firstName',
     label: 'First Name',
     type: 'text',
     required: true,
@@ -233,7 +233,7 @@ export const progressFormFields = [
     gridSpan: 12,
   },
   {
-    name: 'last_name',
+    name: 'lastName',
     label: 'Last Name',
     type: 'text',
     required: true,
@@ -243,7 +243,7 @@ export const progressFormFields = [
 
   // Effort and Outcome
   {
-    name: 'doors_knocked',
+    name: 'doorsKnocked',
     label: 'Doors Knocked',
     type: 'select',
     required: true,
@@ -252,9 +252,10 @@ export const progressFormFields = [
     gridSpan: 24,
     placeholder: 'How many doors did you knock today?',
     options: Array.from({ length: 21 }, (_, i) => i),
+    isExpandable: true,
   },
   {
-    name: 'appointments_scheduled',
+    name: 'appointmentsScheduled',
     label: 'Appointments Scheduled from Knocking',
     type: 'select',
     required: true,
@@ -265,7 +266,7 @@ export const progressFormFields = [
     options: Array.from({ length: 10 }, (_, i) => i),
   },
   {
-    name: 'inspections_scheduled',
+    name: 'inspectionsScheduled',
     label: 'Inspections Scheduled',
     type: 'select',
     required: true,
@@ -274,9 +275,10 @@ export const progressFormFields = [
     gridSpan: 24,
     placeholder: 'How many inspection you have scheduled today',
     options: Array.from({ length: 21 }, (_, i) => i),
+    isExpandable: true,
   },
   {
-    name: 'company_leads_received',
+    name: 'companyLeadsReceived',
     label: 'Company Leads Received',
     type: 'select',
     required: true,
@@ -285,7 +287,39 @@ export const progressFormFields = [
     gridSpan: 24,
     placeholder: 'How many leads have you received today?',
     options: Array.from({ length: 21 }, (_, i) => i),
+    isExpandable: true,
   },
+];
+
+export const inspectionOutcomeOptions = [
+  { value: 'closed', label: 'Closed/Sold' },
+  { value: 'notClosed', label: "Didn't close" },
+];
+
+export const outcomeOptions = [
+  { value: 'noShow', label: 'No show' },
+  { value: 'completedInspection', label: 'Completed inspection' },
+  { value: 'alreadyHasService', label: 'Already has service' },
+  { value: 'renterMultiFamily', label: 'Renter/Multi-family' },
+  { value: 'knockOut', label: 'Knock-out' },
+  { value: 'turnedAway', label: 'Turned away' },
+];
+export const negativeOutComeReasons = [
+  { value: 'money', label: 'Money' },
+  { value: 'unsatisfiedCustomer', label: 'Unsatisfied Customer' },
+  { value: 'noDecisionMaker', label: 'No decision maker' },
+  { value: 'moving', label: 'Moving' },
+  { value: 'newBuild', label: 'New build' },
+  { value: 'noValue', label: 'No value' },
+];
+
+export const closedOptions = [
+  { value: 'initialInstallCharged', label: 'Initial Install Charged' },
+  { value: 'monthlyRecurringPayment', label: 'Monthly Recurring Payment' },
+  { value: 'scheduledInstallDate', label: 'Scheduled Install Date' },
+];
+
+export const progressFormFieldsComm = [
   // {
   //   name: 'self_gen_scheduled',
   //   label: 'Self-Gen Inspections Scheduled',
@@ -336,26 +370,4 @@ export const progressFormFields = [
   //   gridSpan: 24,
   //   options: Array.from({ length: 21 }, (_, i) => i),
   // },
-];
-
-export const inspectionOutcomeOptions = [
-  { value: 'closed', label: 'Closed/Sold' },
-  { value: 'notClosed', label: "Didn't close" },
-];
-
-export const outcomeOptions = [
-  { value: 'noShow', label: 'No show' },
-  { value: 'completedInspection', label: 'Completed inspection' },
-  { value: 'alreadyHasService', label: 'Already has service' },
-  { value: 'renterMultiFamily', label: 'Renter/Multi-family' },
-  { value: 'knockOut', label: 'Knock-out' },
-  { value: 'turnedAway', label: 'Turned away' },
-];
-export const negativeOutComeReasons = [
-  { value: 'money', label: 'Money' },
-  { value: 'unsatisfiedCustomer', label: 'Unsatisfied Customer' },
-  { value: 'noDecisionMaker', label: 'No decision maker' },
-  { value: 'moving', label: 'Moving' },
-  { value: 'newBuild', label: 'New build' },
-  { value: 'noValue', label: 'No value' },
 ];

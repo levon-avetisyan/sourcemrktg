@@ -1,7 +1,6 @@
 import { DatePicker, Form, Input, Select } from 'antd';
 import CustomTooltip from '../../../../components/Tooltip/CustomTooltip.tsx';
-
-const { RangePicker } = DatePicker;
+import { IFormField } from '../../interfaces.ts';
 
 export const renderLabelWithTooltip = (
   label?: string,
@@ -25,14 +24,14 @@ export const renderLabelWithTooltip = (
   );
 };
 
-const renderField = (field) => {
-  const { name, label, type, options, required, tooltip, min, max } = field;
+const renderField = (field: IFormField) => {
+  const { name, label, type, options, required, tooltip } = field;
   switch (type) {
     case 'text':
       return (
         <Form.Item
           name={name}
-          label={renderLabelWithTooltip(label, tooltip, min, max)}
+          label={renderLabelWithTooltip(label, tooltip)}
           rules={[{ required, message: `This field is required` }]}
           key={name}
         >
@@ -43,7 +42,7 @@ const renderField = (field) => {
       return (
         <Form.Item
           name={name}
-          label={renderLabelWithTooltip(label, tooltip, min, max)}
+          label={renderLabelWithTooltip(label, tooltip)}
           rules={[{ required, message: `This field is required` }]}
           key={name}
         >
@@ -54,7 +53,7 @@ const renderField = (field) => {
       return (
         <Form.Item
           name={name}
-          label={renderLabelWithTooltip(label, tooltip, min, max)}
+          label={renderLabelWithTooltip(label, tooltip)}
           rules={[{ required, message: `This field is required` }]}
           key={name}
         >
@@ -65,22 +64,11 @@ const renderField = (field) => {
           />
         </Form.Item>
       );
-    case 'dateRange':
-      return (
-        <Form.Item
-          name={name}
-          label={renderLabelWithTooltip(label, tooltip, min, max)}
-          rules={[{ required, message: `This field is required` }]}
-          key={name}
-        >
-          <RangePicker showTime={{ format: 'HH:mm' }} format="HH:mm" />
-        </Form.Item>
-      );
     case 'select':
       return (
         <Form.Item
           name={name}
-          label={renderLabelWithTooltip(label, tooltip, min, max)}
+          label={renderLabelWithTooltip(label, tooltip)}
           rules={[{ required, message: `This field is required` }]}
           key={name}
         >

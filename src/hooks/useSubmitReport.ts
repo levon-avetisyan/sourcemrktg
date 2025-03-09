@@ -1,16 +1,23 @@
 import { useState } from 'react';
 import axiosClient from '../api/axiosClient';
-import { IReportData } from '../pages/dashboard/interfaces.ts';
+import { transformReportData } from '../pages/report/utiils.ts';
+import { IFormData } from '../pages/report/interfaces.ts';
+import { locationId } from '../constants';
 
 const useSubmitReport = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<unknown>(null);
 
-  const submit = async (data: IReportData) => {
+  const submit = async (formData: IFormData) => {
+    const payload = transformReportData(formData);
+    console.log('payload', payload);
     setLoading(true);
 
     try {
-      const response = await axiosClient.post('/reports/add', data);
+      const response = await axiosClient.post('/reports/add', {
+        ...payload,
+        locationId,
+      });
       setLoading(false);
       return response;
     } catch (error) {

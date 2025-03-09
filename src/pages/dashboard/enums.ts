@@ -20,3 +20,9 @@ export enum NEGATIVE_OUTCOME_REASON {
   newBuild = 'New build',
   noValue = 'No value',
 }
+
+export enum POSITIVE_OUTCOME_TYPE {
+  initialInstallCharged = 'Initial Install Charged',
+  monthlyRecurringPayment = 'Monthly Recurring Payment',
+  scheduledInstallDate = 'Scheduled Install Date',
+}

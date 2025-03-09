@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Card, Col, Form, Input, Row, Select } from 'antd';
+import { Button, Card, Col, DatePicker, Form, Input, Row, Select } from 'antd';
 import useSubmitReport from '../../../../hooks/useSubmitReport.ts';
 import './ReportForm.scss';
 import { groupFieldsByCategory, renderField, renderLabelWithTooltip } from './RenderFormFields.tsx';
-import { transformReportData } from '../../utiils.ts';
 import {
+  closedOptions,
   inspectionOutcomeOptions,
   negativeOutComeReasons,
   outcomeOptions,
@@ -12,111 +12,187 @@ import {
 } from '../../constants.ts';
 import { toast } from 'react-toastify';
 
-import { IFormField } from '../../interfaces.ts';
+import { IFormData, IFormField } from '../../interfaces.ts';
+import { IReportState } from './interfaces.ts';
 
 const ReportForm = () => {
   const { submit, loading } = useSubmitReport();
 
   const [form] = Form.useForm();
 
-  const [additionalRows, setAdditionalRows] = useState<Record<string, number>>({
-    inspections_scheduled: 0,
-    company_leads_received: 0,
-    doors_knocked: 0,
+  const [state, setState] = useState<IReportState>({
+    additionalRows: {
+      inspectionsScheduled: [],
+      companyLeadsReceived: [],
+    },
+    showAppointmentsScheduled: false,
   });
-  const [hasCompletedInspection, setHasCompletedInspection] =
-    useState<Record<string, number[]>>(null);
-  const [hasNegativeOutcome, setHasNegativeOutcome] = useState<Record<string, number[]>>(null);
-  const [hasOtherReason, setHasOtherReason] = useState<Record<string, number[]>>(null);
-  const [showAppointmentsScheduled, setShowAppointmentsScheduled] = useState(false);
-  const handleAdditionalRowsChange = (fieldName: string, value: number) => {
-    // Show "appointments_scheduled" if "doors_knocked" value > 0
-    if (fieldName === 'doors_knocked') {
-      setShowAppointmentsScheduled(value > 0);
+
+  const { showAppointmentsScheduled } = state;
+
+  const handleAdditionalRowsChange = (name: string, value: number) => {
+    if (name === 'doorsKnocked') {
+      setState({ ...state, showAppointmentsScheduled: value > 0 });
     } else {
-      setAdditionalRows((prev) => ({
-        ...prev,
-        [fieldName]: value,
-      }));
+      setState((prev: any) => {
+        const additionalRows = { ...prev.additionalRows };
+
+        if (value === 0) {
+          delete additionalRows[name];
+        } else {
+          additionalRows[name] = [...Array.from({ length: value }).map(() => ({}))];
+        }
+
+        return { ...prev, additionalRows };
+      });
     }
   };
 
   const expandableFormField = (field: IFormField) => {
-    const fieldName = field.name;
+    const { name } = field;
     return (
       <>
         <Form.Item
-          name={fieldName}
+          name={name}
           label={renderLabelWithTooltip(field.label, field.tooltip)}
           rules={[{ required: field.required, message: 'This field is required' }]}
         >
           <Select
-            onChange={(val: number) => handleAdditionalRowsChange(fieldName, val)}
+            onChange={(value: number) => handleAdditionalRowsChange(name, value)}
             placeholder={field.placeholder}
           >
             {field.options.map((option: number) => (
-              <Select.Option key={`${fieldName}-${option}`} value={option}>
+              <Select.Option key={`${name}-${option}`} value={option}>
                 {option}
               </Select.Option>
             ))}
           </Select>
         </Form.Item>
 
-        {renderAdditionalRows(fieldName, additionalRows[fieldName] || 0)}
+        {renderAdditionalRows(field)}
       </>
     );
   };
 
-  const handleOutcomeChange = (
-    fieldName: string,
-    value: string,
-    index: number,
-    outcomeType: 'completedInspection' | 'notClosed' | 'other',
-    stateUpdater: React.Dispatch<React.SetStateAction<Record<string, number[]>>>
-  ) => {
-    stateUpdater((prev) => {
-      const updated = { ...prev };
+  const resetFormInput = (name: string, inputName: string, index: number | string) => {
+    const entry = `${inputName}_${name}_${index}`;
+    form.resetFields([entry]);
+    form.setFieldValue(entry, undefined);
+  };
 
-      if (value === outcomeType) {
-        if (!updated[fieldName]) {
-          updated[fieldName] = [];
-        }
-        if (!updated[fieldName].includes(index)) {
-          updated[fieldName].push(index);
-        }
-      } else {
-        if (updated[fieldName]) {
-          updated[fieldName] = updated[fieldName].filter((i) => i !== index);
-          if (updated[fieldName].length === 0) {
-            delete updated[fieldName];
+  const handleSelectInputChange = (
+    name: string,
+    value: number | string,
+    inputName: string,
+    index: number
+  ) => {
+    setState((prevState) => {
+      // Create a copy of the existing rows to avoid mutating state directly
+      let updatedRows = [...(prevState.additionalRows[name] || [])];
+
+      // If inputName is not provided, reset the additionalRows for the given name
+      if (!inputName) {
+        return {
+          ...prevState,
+          additionalRows: {
+            ...prevState.additionalRows,
+            [name]: [],
+          },
+        };
+      }
+
+      // Ensure the specific index exists in the array before updating
+      if (!updatedRows[index]) {
+        updatedRows[index] = {};
+      }
+
+      // Update the specific input field with the given value
+      updatedRows[index] = {
+        ...updatedRows[index],
+        [inputName]: value,
+      };
+
+      // Helper function to remove a field from the object and reset the form input
+      const removeField = (field: string) => {
+        const { [field]: _, ...rest } = updatedRows[index];
+        updatedRows[index] = rest;
+        resetFormInput(name, field, index);
+      };
+
+      // If appointmentOutcome is changed and it's not 'completedInspection', remove inspectionOutcome
+      if (
+        inputName === 'appointmentOutcome' &&
+        updatedRows[index].inspectionOutcome &&
+        value !== 'completedInspection'
+      ) {
+        removeField('inspectionOutcome');
+      }
+
+      // Handle specific logic based on inspectionOutcome
+      if (inputName === 'inspectionOutcome') {
+        if (value === 'notClosed') {
+          // Reset closedOption and remove installDate if inspection is not closed
+          resetFormInput(name, 'closedOption', index);
+          if (updatedRows[index].installDate) {
+            removeField('installDate');
           }
+        } else if (value === 'closed') {
+          // Remove negative outcome reason fields when inspection is closed
+          removeField('negativeOutcomeReason');
+          removeField('otherReasonNegativeOutcome');
         }
       }
 
-      return updated;
+      // If negativeOutcomeReason is not 'other-${name}', reset otherReasonNegativeOutcome
+      if (inputName === 'negativeOutcomeReason' && value !== `other-${name}`) {
+        removeField('otherReasonNegativeOutcome');
+      }
+
+      // If closedOption is not 'scheduledInstallDate', remove installDate field
+      if (inputName === 'closedOption' && value !== 'scheduledInstallDate') {
+        removeField('installDate');
+      }
+
+      // If appointmentOutcome is not 'scheduledInspection', remove otherReasonNegativeOutcome if it exists
+      if (
+        inputName === 'appointmentOutcome' &&
+        value !== 'scheduledInspection' &&
+        updatedRows[index].otherReasonNegativeOutcome
+      ) {
+        removeField('otherReasonNegativeOutcome');
+      }
+
+      // If appointmentOutcome is not 'scheduledInspection', remove installDate if it exists
+      if (
+        inputName === 'appointmentOutcome' &&
+        value !== 'scheduledInspection' &&
+        updatedRows[index].installDate
+      ) {
+        removeField('installDate');
+      }
+
+      // Update state with the modified additionalRows
+      return {
+        ...prevState,
+        additionalRows: {
+          ...prevState.additionalRows,
+          [name]: updatedRows,
+        },
+      };
     });
   };
 
-  // Usage examples:
-  const handleCompletedInspectionChange = (fieldName: string, outcome: string, index: number) => {
-    handleOutcomeChange(
-      fieldName,
-      outcome,
-      index,
-      'completedInspection',
-      setHasCompletedInspection
-    );
+  const renderAdditionalRows = (field: IFormField) => {
+    const { name } = field;
+    const { additionalRows } = state;
+    const length = additionalRows[name]?.length || 0;
+    return Array.from({ length }).map((_, index) => renderSingleRow(field, index));
   };
 
-  const handleInspectionOutcomeChange = (fieldName: string, outcome: string, index: number) => {
-    handleOutcomeChange(fieldName, outcome, index, 'notClosed', setHasNegativeOutcome);
-  };
+  const renderSingleRow = (field: IFormField, index: number) => {
+    const { name } = field;
+    const row = state.additionalRows[name]?.[index] || {};
 
-  const handleNegativeOutcomeChange = (fieldName: string, reason: string, index: number) => {
-    handleOutcomeChange(fieldName, reason, index, 'other', setHasOtherReason);
-  };
-
-  const renderSingleRow = (fieldName: string, index: number) => {
     return (
       <Card
         key={index}
@@ -126,23 +202,23 @@ const ReportForm = () => {
           marginBottom: '12px',
         }}
       >
-        {/* Customer Name + Outcome */}
+        {/* Customer ID + Customer Name + Outcome */}
         <Row gutter={[12, 12]} style={{ marginBottom: '12px' }}>
-          {/* Customer ID */}
+          {name !== 'inspectionsScheduled' && (
+            <Col xs={24} lg={12}>
+              <Form.Item
+                name={`customerId_${name}_${index}`}
+                label="Customer ID"
+                rules={[{ required: true, message: 'This field is required' }]}
+                style={{ marginBottom: 0 }}
+              >
+                <Input placeholder="Customer ID" />
+              </Form.Item>
+            </Col>
+          )}
           <Col xs={24} lg={12}>
             <Form.Item
-              name={`customer_id_${fieldName}_${index}`}
-              label="Customer ID"
-              rules={[{ required: true, message: 'This field is required' }]}
-              style={{ marginBottom: 0 }}
-            >
-              <Input placeholder="Customer ID" />
-            </Form.Item>
-          </Col>
-          {/* Customer Name */}
-          <Col xs={24} lg={12}>
-            <Form.Item
-              name={`customer_name_${fieldName}_${index}`}
+              name={`customerName_${name}_${index}`}
               label="Customer's Full Name"
               rules={[{ required: true, message: 'This field is required' }]}
               style={{ marginBottom: 0 }}
@@ -150,122 +226,174 @@ const ReportForm = () => {
               <Input placeholder="Customer Name" />
             </Form.Item>
           </Col>
-          {/* Outcome of the appointment */}
-          <Col xs={24} lg={12}>
+        </Row>
+
+        <Row style={{ marginBottom: '12px' }}>
+          <Col xs={24} lg={24}>
             <Form.Item
-              name={`appointment_outcome_${fieldName}_${index}`}
+              name={`appointmentOutcome_${name}_${index}`}
               label="Outcome of the appointment"
               rules={[{ required: true, message: 'This field is required' }]}
               style={{ marginBottom: 0 }}
             >
               <Select
                 placeholder="Select the outcome of the appointment"
-                onChange={(o: string) => handleCompletedInspectionChange(fieldName, o, index)}
+                onChange={(value: string) => {
+                  handleSelectInputChange(name, value, 'appointmentOutcome', index);
+                }}
               >
                 {outcomeOptions.map((option) => (
-                  <Select.Option key={`${fieldName}-${option.value}`} value={option.value}>
+                  <Select.Option key={`${name}-${option.value}`} value={option.value}>
                     {option.label}
                   </Select.Option>
                 ))}
               </Select>
             </Form.Item>
           </Col>
-          {/* If outcome is completed inspection */}
-          {hasCompletedInspection && hasCompletedInspection[fieldName]?.includes(index) && (
-            <>
-              <Col xs={24} lg={12}>
-                <Form.Item
-                  name={`inspection_outcome_${fieldName}_${index}`}
-                  label="Outcome of the inspection"
-                  rules={[{ required: true, message: 'This field is required' }]}
-                  style={{ marginBottom: 0 }}
-                >
-                  <Select
-                    placeholder="Select the outcome of the inspection"
-                    onChange={(r: string) => handleInspectionOutcomeChange(fieldName, r, index)}
-                  >
-                    {inspectionOutcomeOptions.map((option) => (
-                      <Select.Option key={`${fieldName}-${option.value}`} value={option.value}>
-                        {option.label}
-                      </Select.Option>
-                    ))}
-                  </Select>
-                </Form.Item>
-              </Col>
-              {/* If "other" selected, show text input */}
-              {hasNegativeOutcome && hasNegativeOutcome[fieldName]?.includes(index) && (
-                <>
-                  <Col xs={24} lg={24}>
-                    {/*Select the reason of the negative outcome */}
-                    <Form.Item
-                      name={`negative_outcome_reason_${fieldName}_${index}`}
-                      label="Reason of the negative outcome"
-                      rules={[{ required: true, message: 'This field is required' }]}
-                      style={{ marginBottom: 0 }}
-                    >
-                      <Select
-                        placeholder="Select reason of the negative outcome"
-                        onChange={(r: string) => handleNegativeOutcomeChange(fieldName, r, index)}
-                      >
-                        {negativeOutComeReasons.map((option) => (
-                          <Select.Option key={`${fieldName}-${option.value}`} value={option.value}>
-                            {option.label}
-                          </Select.Option>
-                        ))}
-                        {/* Additional "Other" option with a unique key */}
-                        <Select.Option key={`other-${fieldName}`} value="other">
-                          Other (please specify the reason)
-                        </Select.Option>
-                      </Select>
-                    </Form.Item>
-                  </Col>
-                  {hasOtherReason && hasOtherReason[fieldName]?.includes(index) && (
-                    <Col xs={24} lg={24}>
-                      <Form.Item
-                        name={`other_reason_negative_outcome_${fieldName}_${index}`}
-                        label="Other Reason"
-                        rules={[{ required: true, message: 'This field is required' }]}
-                        style={{ marginBottom: 0 }}
-                      >
-                        <Input placeholder="Enter other reason" />
-                      </Form.Item>
-                    </Col>
-                  )}
-                </>
-              )}
-            </>
-          )}
         </Row>
+
+        {/* Show Inspection Outcome */}
+        {row.appointmentOutcome === 'completedInspection' && (
+          <Row style={{ marginBottom: '12px' }}>
+            <Col xs={24}>
+              <Form.Item
+                name={`inspectionOutcome_${name}_${index}`}
+                label="Outcome of the inspection"
+                rules={[{ required: true, message: 'This field is required' }]}
+                style={{ marginBottom: 0 }}
+              >
+                <Select
+                  placeholder="Select the outcome of the inspection"
+                  onChange={(value: string) =>
+                    handleSelectInputChange(name, value, 'inspectionOutcome', index)
+                  }
+                >
+                  {inspectionOutcomeOptions.map((option) => (
+                    <Select.Option key={`${name}-${option.value}`} value={option.value}>
+                      {option.label}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+        )}
+
+        {/* Show Closed Fields */}
+        {row.inspectionOutcome === 'closed' && (
+          <Row style={{ marginBottom: '12px' }}>
+            <Col xs={24} lg={24}>
+              <Form.Item
+                name={`closedOption_${name}_${index}`}
+                label="Option of the positive outcome"
+                rules={[{ required: true, message: 'This field is required' }]}
+                style={{ marginBottom: 0 }}
+              >
+                <Select
+                  placeholder="Select an option"
+                  onChange={(value: string) =>
+                    handleSelectInputChange(name, value, 'closedOption', index)
+                  }
+                >
+                  {closedOptions.map((option) => (
+                    <Select.Option key={option.value} value={option.value}>
+                      {option.label}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+        )}
+
+        {/* Show Install Date Picker */}
+        {row.closedOption === 'scheduledInstallDate' && row.inspectionOutcome === 'closed' && (
+          <Row style={{ marginBottom: '12px' }}>
+            <Col xs={24} lg={24}>
+              <Form.Item
+                name={`installDate_${name}_${index}`}
+                label="Installation Date"
+                rules={[{ required: true, message: 'This field is required' }]}
+                style={{ marginBottom: 0 }}
+              >
+                <DatePicker
+                  style={{ width: '100%' }}
+                  placeholder="Select the installation date"
+                  format="MM/DD/YYYY"
+                  onChange={(_, dateString) =>
+                    handleSelectInputChange(
+                      name,
+                      Array.isArray(dateString) ? dateString.join(', ') : dateString,
+                      'installDate',
+                      index
+                    )
+                  }
+                />
+              </Form.Item>
+            </Col>
+          </Row>
+        )}
+
+        {/* Show Not Closed Fields */}
+        {row.inspectionOutcome === 'notClosed' && (
+          <Row style={{ marginBottom: '12px' }}>
+            <Col xs={24} lg={24}>
+              <Form.Item
+                name={`negativeOutcomeReason_${name}_${index}`}
+                label="Reason of the negative outcome"
+                rules={[{ required: true, message: 'This field is required' }]}
+                style={{ marginBottom: 0 }}
+              >
+                <Select
+                  placeholder="Select reason of the negative outcome"
+                  onChange={(value: string) =>
+                    handleSelectInputChange(name, value, 'negativeOutcomeReason', index)
+                  }
+                >
+                  {negativeOutComeReasons.map((option) => (
+                    <Select.Option key={`${name}-${option.value}`} value={option.value}>
+                      {option.label}
+                    </Select.Option>
+                  ))}
+                  <Select.Option key={`other-${name}`} value="other">
+                    Other (please specify the reason)
+                  </Select.Option>
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+        )}
+
+        {/* Show Other Reason Input */}
+        {row.negativeOutcomeReason === 'other' && (
+          <Row style={{ marginBottom: '12px' }}>
+            <Col xs={24} lg={24}>
+              <Form.Item
+                name={`otherReasonNegativeOutcome_${name}_${index}`}
+                label="Other Reason"
+                rules={[{ required: true, message: 'This field is required' }]}
+                style={{ marginBottom: 0 }}
+              >
+                <Input placeholder="Enter other reason" />
+              </Form.Item>
+            </Col>
+          </Row>
+        )}
       </Card>
     );
   };
 
-  const renderAdditionalRows = (fieldName: string, count: number) => {
-    return Array.from({ length: count }).map((_, index) => renderSingleRow(fieldName, index));
-  };
-
   const groupedFields = groupFieldsByCategory(progressFormFields);
-
-  const resetForm = () => {
-    form.resetFields();
-    setAdditionalRows({});
-    setHasCompletedInspection({});
-    setHasNegativeOutcome({});
-    setHasOtherReason({});
-    setShowAppointmentsScheduled(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const onFinishFailed = () => {
     toast.error('Missing required fields. Please fill out all required fields.');
   };
 
-  const onFinish = async (values) => {
-    const payload = transformReportData(values);
-    const response = await submit(payload);
+  const onFinish = async (formData: IFormData) => {
+    console.log('formData: ', formData);
+    const response = await submit(formData);
     if (response.status === 201) {
       toast.success('Thank you. Your report has been submitted.');
-      resetForm();
     }
   };
 
@@ -285,20 +413,16 @@ const ReportForm = () => {
                 <h3>{category}</h3>
               </Col>
               {groupedFields[category].map((field: IFormField) => {
-                const fieldName = field.name;
-                const isExpandableField =
-                  fieldName === 'inspections_scheduled' ||
-                  fieldName === 'company_leads_received' ||
-                  fieldName === 'doors_knocked';
+                const name = field.name;
+                const isExpandable = field.isExpandable;
 
-                // Conditionally render 'appointments_scheduled' only when showAppointmentsScheduled is true
-                if (fieldName === 'appointments_scheduled' && !showAppointmentsScheduled) {
-                  return null; // Skip rendering when showAppointmentsScheduled is false
+                if (name === 'appointmentsScheduled' && !showAppointmentsScheduled) {
+                  return null;
                 }
 
                 return (
-                  <Col xs={24} sm={field.gridSpan || 12} lg={field.gridSpan || 8} key={fieldName}>
-                    {isExpandableField ? expandableFormField(field) : renderField(field)}
+                  <Col xs={24} sm={field.gridSpan || 12} lg={field.gridSpan || 8} key={name}>
+                    {isExpandable ? expandableFormField(field) : renderField(field)}
                   </Col>
                 );
               })}

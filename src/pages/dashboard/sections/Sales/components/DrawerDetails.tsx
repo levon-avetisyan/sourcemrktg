@@ -5,6 +5,7 @@ import {
   APPOINTMENT_OUTCOME,
   INSPECTION_OUTCOME,
   NEGATIVE_OUTCOME_REASON,
+  POSITIVE_OUTCOME_TYPE,
 } from '../../../enums.ts';
 import {
   CalendarOutlined,
@@ -34,12 +35,14 @@ const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
       title={<strong style={{ fontSize: '14px' }}>{item.customerName}</strong>}
       description={
         <>
-          <p style={{ margin: '4px 0', color: '#555' }}>
-            <strong>
-              <UserOutlined /> Customer ID:{' '}
-            </strong>
-            {item.customerId}
-          </p>
+          {item.customerId && (
+            <p style={{ margin: '4px 0', color: '#555' }}>
+              <strong>
+                <UserOutlined /> Customer ID:{' '}
+              </strong>
+              {item.customerId}
+            </p>
+          )}
           <p style={{ margin: '4px 0', color: '#555' }}>
             <strong>
               <HomeOutlined /> Appointment:{' '}
@@ -65,6 +68,26 @@ const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
                     item.negativeOutcomeReason as keyof typeof NEGATIVE_OUTCOME_REASON
                   ]}
             </p>
+          )}
+          {item.inspectionOutcome === 'closed' && (
+            <>
+              <p style={{ margin: '4px 0', color: '#555' }}>
+                <strong>
+                  <CloseCircleOutlined /> Closed With:
+                </strong>{' '}
+                {item.closedOption === 'scheduledInstallDate'
+                  ? POSITIVE_OUTCOME_TYPE[item.closedOption as keyof typeof POSITIVE_OUTCOME_TYPE]
+                  : POSITIVE_OUTCOME_TYPE[item.closedOption as keyof typeof POSITIVE_OUTCOME_TYPE]}
+              </p>
+              {item.closedOption === 'scheduledInstallDate' && item.installDate && (
+                <p style={{ margin: '4px 0', color: '#555' }}>
+                  <strong>
+                    <CalendarOutlined /> Install Date:
+                  </strong>{' '}
+                  {new Date(item.installDate).toLocaleDateString()}
+                </p>
+              )}
+            </>
           )}
         </>
       }
@@ -154,8 +177,10 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
             <Card
               title="Scheduled Inspections"
               size="small"
-              style={{ marginTop: '12px', padding: '8px' }}
-              bodyStyle={{ padding: '12px' }}
+              styles={{
+                body: { padding: '20px' },
+                wrapper: { marginTop: '12px', padding: '8px' },
+              }}
             >
               <List
                 itemLayout="horizontal"
