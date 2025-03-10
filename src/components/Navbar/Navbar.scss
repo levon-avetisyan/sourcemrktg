@@ -1,4 +1,4 @@
-@use '../../styles/variables' as vars;
+@use '../../styles/variables' as *;
 
 .navbar {
   width: 100%;
@@ -6,7 +6,7 @@
   z-index: 200;
   padding-top: 20px;
   &.dark {
-    background-color: vars.$black;
+    background-color: $black;
     padding-top: 4px;
     .navbar-nav .nav-link {
       font-size: 14px;
@@ -30,6 +30,12 @@
     }
   }
 
+  @media (max-width: 991px) {
+    &.daily-progress-form {
+      background-color: $black;
+    }
+  }
+
   .navbar-nav {
     width: 100%;
     justify-content: flex-end;
@@ -46,7 +52,7 @@
       padding-left: 0;
       padding-right: 0;
       &:hover {
-        color: vars.$sand-brown;
+        color: $sand-brown;
         &:before {
           bottom: 7px;
           transform: scaleX(1);
@@ -60,7 +66,7 @@
         right: 0px;
         width: 100%;
         height: 1px;
-        background-color: vars.$sand-brown;
+        background-color: c$sand-brown;
         transition: all 0.2s ease-in-out;
       }
     }
@@ -103,7 +109,7 @@
   }
   .navbar {
     padding: 15px 0;
-    background: vars.$black;
+    background: $black;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     .nav-link {
       &:first-child {

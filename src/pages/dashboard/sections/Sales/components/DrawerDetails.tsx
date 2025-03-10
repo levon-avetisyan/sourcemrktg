@@ -9,9 +9,9 @@ import {
 } from '../../../enums.ts';
 import {
   CalendarOutlined,
-  CheckCircleOutlined,
   CloseCircleOutlined,
   HomeOutlined,
+  IdcardOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 
@@ -21,84 +21,109 @@ interface DrawerDetailsProps {
   onClose: () => void;
 }
 
+const getOutcomeColor = (outcome: string | undefined): string => {
+  if (!outcome) return '#555'; // Default color (grayish)
+
+  const greenOutcomes = ['completed', 'success', 'approved', 'closed', 'completedInspection']; // Example positive cases
+  const yellowOutcomes = ['pending', 'rescheduled', 'inProgress']; // Example neutral cases
+  const redOutcomes = ['failed', 'canceled', 'notClosed', 'rejected']; // Example negative cases
+
+  if (greenOutcomes.includes(outcome)) return 'green';
+  if (yellowOutcomes.includes(outcome)) return 'orange';
+  if (redOutcomes.includes(outcome)) return 'red';
+
+  return '#555'; // Default fallback color
+};
+
 const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
   <List.Item
     style={{
-      padding: '6px 8px',
-      backgroundColor: '#f9f9f9',
-      borderRadius: '4px',
-      marginBottom: '8px',
+      padding: '8px',
+      backgroundColor: '#fffbe6',
+      border: '1px solid #ffd666',
+      borderRadius: '6px',
+      marginBottom: '12px',
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'stretch',
     }}
   >
     <List.Item.Meta
-      avatar={<UserOutlined />}
+      style={{ width: '100%', marginBottom: '6px' }}
+      avatar={<IdcardOutlined style={{ fontSize: '24px' }} />}
       title={<strong style={{ fontSize: '14px' }}>{item.customerName}</strong>}
-      description={
+    />
+    <div>
+      {item.customerId && (
+        <p style={{ margin: '4px 0', color: '#555' }}>
+          <strong>
+            <UserOutlined /> Customer ID:{' '}
+          </strong>
+          <span className="value">{item.customerId}</span>
+        </p>
+      )}
+      <p style={{ margin: '4px 0', color: '#555' }}>
+        <strong>
+          <HomeOutlined /> Appointment:{' '}
+        </strong>
+        <span className="value" style={{ color: getOutcomeColor(item.appointmentOutcome) }}>
+          {APPOINTMENT_OUTCOME[item.appointmentOutcome as keyof typeof APPOINTMENT_OUTCOME]}
+        </span>
+      </p>
+      {item.inspectionOutcome && (
+        <p style={{ margin: '4px 0', color: '#555' }}>
+          <strong>
+            <CalendarOutlined /> Inspection:{' '}
+          </strong>
+          <span className="value" style={{ color: getOutcomeColor(item.inspectionOutcome) }}>
+            {INSPECTION_OUTCOME[item.inspectionOutcome as keyof typeof INSPECTION_OUTCOME]}
+          </span>
+        </p>
+      )}
+      {item.inspectionOutcome === 'notClosed' && (
+        <p style={{ margin: '4px 0', color: '#555' }}>
+          <strong>
+            <CloseCircleOutlined /> Reason:
+          </strong>{' '}
+          <span className="value" style={{ color: getOutcomeColor(item.negativeOutcomeReason) }}>
+            {item.negativeOutcomeReason === 'other'
+              ? item.otherReasonNegativeOutcome
+              : NEGATIVE_OUTCOME_REASON[
+                  item.negativeOutcomeReason as keyof typeof NEGATIVE_OUTCOME_REASON
+                ]}
+          </span>
+        </p>
+      )}
+      {item.inspectionOutcome === 'closed' && (
         <>
-          {item.customerId && (
-            <p style={{ margin: '4px 0', color: '#555' }}>
-              <strong>
-                <UserOutlined /> Customer ID:{' '}
-              </strong>
-              {item.customerId}
-            </p>
-          )}
           <p style={{ margin: '4px 0', color: '#555' }}>
             <strong>
-              <HomeOutlined /> Appointment:{' '}
-            </strong>
-            {APPOINTMENT_OUTCOME[item.appointmentOutcome as keyof typeof APPOINTMENT_OUTCOME]}
+              <CloseCircleOutlined /> Closed With:
+            </strong>{' '}
+            <span className="value" style={{ color: getOutcomeColor(item.closedOption) }}>
+              {POSITIVE_OUTCOME_TYPE[item.closedOption as keyof typeof POSITIVE_OUTCOME_TYPE]}
+            </span>
           </p>
-          {item.inspectionOutcome && (
+          {item.closedOption === 'scheduledInstallDate' && item.installDate && (
             <p style={{ margin: '4px 0', color: '#555' }}>
               <strong>
-                <CalendarOutlined /> Inspection:{' '}
-              </strong>
-              {INSPECTION_OUTCOME[item.inspectionOutcome as keyof typeof INSPECTION_OUTCOME]}
-            </p>
-          )}
-          {item.inspectionOutcome === 'notClosed' && (
-            <p style={{ margin: '4px 0', color: '#555' }}>
-              <strong>
-                <CloseCircleOutlined /> Reason:
+                <CalendarOutlined /> Install Date:
               </strong>{' '}
-              {item.negativeOutcomeReason === 'other'
-                ? item.otherReasonNegativeOutcome
-                : NEGATIVE_OUTCOME_REASON[
-                    item.negativeOutcomeReason as keyof typeof NEGATIVE_OUTCOME_REASON
-                  ]}
+              <span className="value">{new Date(item.installDate).toLocaleDateString()}</span>
             </p>
-          )}
-          {item.inspectionOutcome === 'closed' && (
-            <>
-              <p style={{ margin: '4px 0', color: '#555' }}>
-                <strong>
-                  <CloseCircleOutlined /> Closed With:
-                </strong>{' '}
-                {item.closedOption === 'scheduledInstallDate'
-                  ? POSITIVE_OUTCOME_TYPE[item.closedOption as keyof typeof POSITIVE_OUTCOME_TYPE]
-                  : POSITIVE_OUTCOME_TYPE[item.closedOption as keyof typeof POSITIVE_OUTCOME_TYPE]}
-              </p>
-              {item.closedOption === 'scheduledInstallDate' && item.installDate && (
-                <p style={{ margin: '4px 0', color: '#555' }}>
-                  <strong>
-                    <CalendarOutlined /> Install Date:
-                  </strong>{' '}
-                  {new Date(item.installDate).toLocaleDateString()}
-                </p>
-              )}
-            </>
           )}
         </>
-      }
-    />
+      )}
+    </div>
   </List.Item>
 );
 
 const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, onClose }) => {
   return (
     <Drawer
-      title="Details of the Report"
+      title="Report: Details"
       placement="right"
       closable
       onClose={onClose}
@@ -108,67 +133,25 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
       {selectedRow ? (
         <>
           <Descriptions bordered column={1} size="small" style={{ marginBottom: '16px' }}>
-            <Descriptions.Item
-              label={
-                <span>
-                  <UserOutlined /> First Name
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>First Name</span>}>
               {selectedRow.firstName}
             </Descriptions.Item>
-            <Descriptions.Item
-              label={
-                <span>
-                  <UserOutlined /> Last Name
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>Last Name</span>}>
               {selectedRow.lastName}
             </Descriptions.Item>
-            <Descriptions.Item
-              label={
-                <span>
-                  <HomeOutlined /> Location
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>Location</span>}>
               {selectedRow.location}
             </Descriptions.Item>
-            <Descriptions.Item
-              label={
-                <span>
-                  <CalendarOutlined /> Report Date
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>Report Date</span>}>
               {selectedRow.reportDate}
             </Descriptions.Item>
-            <Descriptions.Item
-              label={
-                <span>
-                  <CalendarOutlined /> Doors Knocked
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>Doors Knocked</span>}>
               {selectedRow.doorsKnocked}
             </Descriptions.Item>
-            <Descriptions.Item
-              label={
-                <span>
-                  <CalendarOutlined /> Inspections Scheduled
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>Inspections Scheduled</span>}>
               {selectedRow.inspectionsScheduledCount}
             </Descriptions.Item>
-            <Descriptions.Item
-              label={
-                <span>
-                  <CheckCircleOutlined /> Company Leads Received
-                </span>
-              }
-            >
+            <Descriptions.Item label={<span>Company Leads Received</span>}>
               {selectedRow.companyLeadsReceivedCount}
             </Descriptions.Item>
           </Descriptions>
@@ -178,8 +161,8 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
               title="Scheduled Inspections"
               size="small"
               styles={{
-                body: { padding: '20px' },
-                wrapper: { marginTop: '12px', padding: '8px' },
+                body: { padding: '12px 12px 0 12px' },
+                header: { background: '#6fa462', color: 'white' },
               }}
             >
               <List
@@ -195,8 +178,11 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
             <Card
               title="Company Leads Received"
               size="small"
-              style={{ marginTop: '12px', padding: '8px' }}
-              bodyStyle={{ padding: '12px' }}
+              styles={{
+                body: { padding: '12px 12px 0 12px' },
+                header: { background: '#2f4d41', color: 'white' },
+              }}
+              style={{ marginTop: '12px' }}
             >
               <List
                 itemLayout="horizontal"

@@ -200,6 +200,7 @@ const ReportForm = () => {
           backgroundColor: '#fffbe6',
           borderColor: '#ffd666',
           marginBottom: '12px',
+          marginTop: '12px',
         }}
       >
         {/* Customer ID + Customer Name + Outcome */}
@@ -223,7 +224,7 @@ const ReportForm = () => {
               rules={[{ required: true, message: 'This field is required' }]}
               style={{ marginBottom: 0 }}
             >
-              <Input placeholder="Customer Name" />
+              <Input placeholder="Firt name & last name" />
             </Form.Item>
           </Col>
         </Row>

@@ -122,6 +122,7 @@ const Table: React.FC<IProps> = ({
         loading={loading}
         pagination
         pageSizeOptions={[5, 10, 20]}
+        getRowHeight={() => 45}
         rowCount={totalReports}
         paginationMode="server"
         paginationModel={{ page: currentPage, pageSize }}
@@ -137,6 +138,10 @@ const Table: React.FC<IProps> = ({
         sx={{
           '& .MuiDataGrid-row:hover': {
             cursor: 'pointer',
+          },
+          '& .MuiDataGrid-columnHeader:focus, & .MuiDataGrid-cell:focus': {
+            outline: 'none', // Change to your preferred color and size
+            outlineOffset: '2px',
           },
         }}
       />

@@ -8,9 +8,11 @@ const Report: React.FC = () => {
     <div className="page-daily-progress">
       <Navbar theme={'daily-progress-form'} />
       <section className="daily-progress">
-        <h1 className="section-title">Daily Progress Report</h1>
-        <p className="subtitle">Fill out the form below to submit your daily sales data</p>
-        <ReportForm />
+        <div className="container">
+          <h1 className="section-title">Daily Progress Report</h1>
+          <p className="subtitle">Fill out the form below to submit your daily sales data</p>
+          <ReportForm />
+        </div>
       </section>
     </div>
   );

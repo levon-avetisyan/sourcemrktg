@@ -66,6 +66,7 @@
 .dashboard-item {
   border-radius: 12px;
   box-shadow: $box-shadow-light;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   padding: 1rem;
   &.chart-item {
     display: flex;
@@ -75,12 +76,12 @@
   &.total-metric {
     height: 100%;
     h6 {
-      font-family: $font-family-quicksand;
+      font-family: $font-family-roboto;
       font-weight: 600;
       margin-bottom: 10px;
     }
     h5 {
-      font-family: $font-family-quicksand;
+      font-family: $font-family-roboto;
       font-weight: 600;
       margin-bottom: 10px;
     }
@@ -103,6 +104,74 @@
 }
 
 .ant-menu-item-selected{
-   background-color: $blue-btn !important;
+  background-color: $blue-btn !important;
   color: $white !important;
+}
+.ant-card,
+.ant-input,
+.ant-table {
+  border-color: rgba(0,0,0,0.15) !important;
+}
+
+.ant-descriptions{
+  border:1px solid rgba(0,0,0,0.15) !important;
+  border-radius: 6px;
+  .ant-descriptions-row {
+    border-color: rgba(0,0,0,0.15) !important;
+    .ant-descriptions-item-label, .ant-descriptions-item-content{
+      padding: 6px !important;
+    }
+    .ant-descriptions-item-label {
+      border-right:1px solid rgba(0,0,0,0.15) !important;
+      font-weight: 600;
+    }
+    .ant-descriptions-item-content {
+    }
+    td, th{
+      font-size: 13px !important;
+      font-family: $font-family-roboto;
+    }
+  }
+}
+
+
+.ant-card-head-wrapper{
+  .ant-card-head-title{
+    font-weight: 500;
+    font-size: 14px !important;
+    font-family: $font-family-roboto;
+  }
+}
+
+.ant-list-item{
+  font-weight: 400;
+  font-size: 13px !important;
+  font-family: $font-family-roboto;
+  padding: 12px !important;
+  .ant-list-item-meta{
+    align-items: center;
+    .ant-list-item-meta-title {
+      margin-bottom: 0 !important;
+    }
+    .ant-list-item-meta-avatar{
+      margin-right: 10px !important;
+    }
+  }
+}
+
+.ant-drawer-content-wrapper{
+  .ant-drawer-body{
+    padding: 15px 18px 20px 18px !important;
+  }
+}
+
+.dashboard-totals{
+  .ant-row{
+    .ant-col {
+      .ant-card{
+        box-shadow: $box-shadow-light;
+        border: 1px solid rgba(0,0,0,0.15) !important;
+      }
+    }
+  }
 }
