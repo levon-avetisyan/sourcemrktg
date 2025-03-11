@@ -4,7 +4,6 @@ import useSubmitReport from '../../../../hooks/useSubmitReport.ts';
 import './ReportForm.scss';
 import { groupFieldsByCategory, renderField, renderLabelWithTooltip } from './RenderFormFields.tsx';
 import {
-  closedOptions,
   inspectionOutcomeOptions,
   negativeOutComeReasons,
   outcomeOptions,
@@ -14,6 +13,7 @@ import { toast } from 'react-toastify';
 
 import { IFormData, IFormField } from '../../interfaces.ts';
 import { IReportState } from './interfaces.ts';
+import CurrencyInput from '../CurrencyInput.tsx';
 
 const ReportForm = () => {
   const { submit, loading } = useSubmitReport();
@@ -282,57 +282,64 @@ const ReportForm = () => {
 
         {/* Show Closed Fields */}
         {row.inspectionOutcome === 'closed' && (
-          <Row style={{ marginBottom: '12px' }}>
-            <Col xs={24} lg={24}>
-              <Form.Item
-                name={`closedOption_${name}_${index}`}
-                label="Option of the positive outcome"
-                rules={[{ required: true, message: 'This field is required' }]}
-                style={{ marginBottom: 0 }}
-              >
-                <Select
-                  placeholder="Select an option"
-                  onChange={(value: string) =>
-                    handleSelectInputChange(name, value, 'closedOption', index)
-                  }
+          <>
+            <Row style={{ marginBottom: '12px' }} gutter={{ xs: 12, lg: 24 }}>
+              <Col xs={24} lg={12}>
+                <Form.Item
+                  name={`initialInstallCharged_${name}_${index}`}
+                  label="Initial Install Charged"
+                  rules={[{ required: true, message: 'This field is required' }]}
+                  style={{ marginBottom: 0 }}
                 >
-                  {closedOptions.map((option) => (
-                    <Select.Option key={option.value} value={option.value}>
-                      {option.label}
-                    </Select.Option>
-                  ))}
-                </Select>
-              </Form.Item>
-            </Col>
-          </Row>
-        )}
-
-        {/* Show Install Date Picker */}
-        {row.closedOption === 'scheduledInstallDate' && row.inspectionOutcome === 'closed' && (
-          <Row style={{ marginBottom: '12px' }}>
-            <Col xs={24} lg={24}>
-              <Form.Item
-                name={`installDate_${name}_${index}`}
-                label="Installation Date"
-                rules={[{ required: true, message: 'This field is required' }]}
-                style={{ marginBottom: 0 }}
-              >
-                <DatePicker
-                  style={{ width: '100%' }}
-                  placeholder="Select the installation date"
-                  format="MM/DD/YYYY"
-                  onChange={(_, dateString) =>
-                    handleSelectInputChange(
-                      name,
-                      Array.isArray(dateString) ? dateString.join(', ') : dateString,
-                      'installDate',
-                      index
-                    )
-                  }
-                />
-              </Form.Item>
-            </Col>
-          </Row>
+                  <CurrencyInput
+                    value={form.getFieldValue(`initialInstallCharged_${name}_${index}`)}
+                    onChange={(value: any) =>
+                      form.setFieldsValue({ [`initialInstallCharged_${name}_${index}`]: value })
+                    }
+                  />
+                </Form.Item>
+              </Col>
+              <Col xs={24} lg={12}>
+                <Form.Item
+                  name={`monthlyRecurringPayment_${name}_${index}`}
+                  label="Monthly Recurring Payment"
+                  rules={[{ required: true, message: 'This field is required' }]}
+                  style={{ marginBottom: 0 }}
+                >
+                  <CurrencyInput
+                    value={form.getFieldValue(`monthlyRecurringPayment_${name}_${index}`)}
+                    onChange={(value: any) =>
+                      form.setFieldsValue({ [`monthlyRecurringPayment_${name}_${index}`]: value })
+                    }
+                  />
+                </Form.Item>
+              </Col>
+            </Row>
+            <Row style={{ marginBottom: '12px' }} gutter={{ xs: 12, lg: 24 }}>
+              <Col xs={24} lg={24}>
+                <Form.Item
+                  name={`installDate_${name}_${index}`}
+                  label="Installation Date"
+                  rules={[{ required: true, message: 'This field is required' }]}
+                  style={{ marginBottom: 0 }}
+                >
+                  <DatePicker
+                    style={{ width: '100%' }}
+                    placeholder="Select the installation date"
+                    format="MM/DD/YYYY"
+                    onChange={(_, dateString) =>
+                      handleSelectInputChange(
+                        name,
+                        Array.isArray(dateString) ? dateString.join(', ') : dateString,
+                        'installDate',
+                        index
+                      )
+                    }
+                  />
+                </Form.Item>
+              </Col>
+            </Row>
+          </>
         )}
 
         {/* Show Not Closed Fields */}

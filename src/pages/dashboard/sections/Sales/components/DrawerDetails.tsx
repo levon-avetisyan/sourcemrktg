@@ -5,11 +5,11 @@ import {
   APPOINTMENT_OUTCOME,
   INSPECTION_OUTCOME,
   NEGATIVE_OUTCOME_REASON,
-  POSITIVE_OUTCOME_TYPE,
 } from '../../../enums.ts';
 import {
   CalendarOutlined,
   CloseCircleOutlined,
+  DollarOutlined,
   HomeOutlined,
   IdcardOutlined,
   UserOutlined,
@@ -98,15 +98,33 @@ const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
       )}
       {item.inspectionOutcome === 'closed' && (
         <>
-          <p style={{ margin: '4px 0', color: '#555' }}>
-            <strong>
-              <CloseCircleOutlined /> Closed With:
-            </strong>{' '}
-            <span className="value" style={{ color: getOutcomeColor(item.closedOption) }}>
-              {POSITIVE_OUTCOME_TYPE[item.closedOption as keyof typeof POSITIVE_OUTCOME_TYPE]}
-            </span>
-          </p>
-          {item.closedOption === 'scheduledInstallDate' && item.installDate && (
+          {item.initialInstallCharged && (
+            <p style={{ margin: '4px 0', color: '#555' }}>
+              <strong>
+                <DollarOutlined /> Initial Install Charged:
+              </strong>{' '}
+              <span className="value" style={{ color: getOutcomeColor(item.closedOption) }}>
+                {new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(item.initialInstallCharged || 0)}
+              </span>
+            </p>
+          )}
+          {item.monthlyRecurringPayment && (
+            <p style={{ margin: '4px 0', color: '#555' }}>
+              <strong>
+                <DollarOutlined /> Monthly Recurring Payment:
+              </strong>{' '}
+              <span className="value" style={{ color: getOutcomeColor(item.closedOption) }}>
+                {new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(item.monthlyRecurringPayment || 0)}
+              </span>
+            </p>
+          )}
+          {item.installDate && (
             <p style={{ margin: '4px 0', color: '#555' }}>
               <strong>
                 <CalendarOutlined /> Install Date:
