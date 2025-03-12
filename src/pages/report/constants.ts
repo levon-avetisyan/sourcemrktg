@@ -251,7 +251,7 @@ export const progressFormFields = [
     category: 'Effort and Outcome',
     gridSpan: 24,
     placeholder: 'How many doors did you knock today?',
-    options: Array.from({ length: 21 }, (_, i) => i),
+    options: [...Array.from({ length: 50 }, (_, i) => i), '50+'],
     isExpandable: true,
   },
   {
@@ -297,8 +297,8 @@ export const inspectionOutcomeOptions = [
 ];
 
 export const outcomeOptions = [
-  { value: 'noShow', label: 'No show' },
   { value: 'completedInspection', label: 'Completed inspection' },
+  { value: 'noShow', label: 'No show' },
   { value: 'alreadyHasService', label: 'Already has service' },
   { value: 'renterMultiFamily', label: 'Renter/Multi-family' },
   { value: 'knockOut', label: 'Knock-out' },

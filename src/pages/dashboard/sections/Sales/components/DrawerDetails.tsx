@@ -176,7 +176,7 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
 
           {selectedRow.scheduledInspections?.length > 0 && (
             <Card
-              title="Scheduled Inspections"
+              title="Self Gen Inspections"
               size="small"
               styles={{
                 body: { padding: '12px 12px 0 12px' },
