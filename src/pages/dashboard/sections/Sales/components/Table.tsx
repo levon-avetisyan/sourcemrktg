@@ -41,7 +41,7 @@ const Table: React.FC<IProps> = ({
     { field: 'appointmentRate', headerName: 'Appointment Rate', width: 150 },
     { field: 'completionRate', headerName: 'Completion Rate', width: 180 },
     { field: 'closeRate', headerName: 'Close Rate', width: 150 },
-    { field: 'conversionRate', headerName: 'Conversion Rate', width: 180 },
+    { field: 'conversionRate', headerName: 'Total Conversion Rate', width: 180 },
     { field: 'inspectionsScheduledCount', headerName: 'Self Gen Inspections', width: 180 },
     { field: 'companyLeadsReceivedCount', headerName: 'Company Leads Received', width: 200 },
     { field: 'doorsKnocked', headerName: 'Doors Knocked', width: 150 },

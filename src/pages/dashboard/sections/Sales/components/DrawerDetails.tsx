@@ -209,7 +209,7 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
               size="small"
               styles={{
                 body: { padding: '12px 12px 0 12px' },
-                header: { background: '#6fa462', color: 'white' },
+                header: { background: '#B3C0A4', color: 'white' },
               }}
             >
               <List
@@ -227,7 +227,7 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
               size="small"
               styles={{
                 body: { padding: '12px 12px 0 12px' },
-                header: { background: '#2f4d41', color: 'white' },
+                header: { background: '#DCC48E', color: 'white' },
               }}
               style={{ marginTop: '12px' }}
             >

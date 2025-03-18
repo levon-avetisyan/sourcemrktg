@@ -10,7 +10,6 @@ const useSubmitReport = () => {
 
   const submit = async (formData: IFormData) => {
     const payload = transformReportData(formData);
-    console.log('payload', payload);
     setLoading(true);
 
     try {
