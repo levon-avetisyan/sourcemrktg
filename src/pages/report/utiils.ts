@@ -21,6 +21,7 @@ export function transformReportData(data: any): IReportData {
         'otherReasonNegativeOutcome',
         'initialInstallCharged',
         'monthlyRecurringPayment',
+        'additionalNotes',
       ].forEach((key) => {
         const value = data[`${key}_${type}_${i}`];
         if (value !== undefined && value !== null) {

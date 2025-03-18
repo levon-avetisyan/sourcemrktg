@@ -10,6 +10,7 @@ import {
   CalendarOutlined,
   CloseCircleOutlined,
   DollarOutlined,
+  EditOutlined,
   HomeOutlined,
   IdcardOutlined,
   UserOutlined,
@@ -134,10 +135,22 @@ const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
           )}
         </>
       )}
+      {item.additionalNotes && (
+        <p style={{ margin: '4px 0', color: '#555' }}>
+          <strong>
+            <EditOutlined /> Additional Notes:
+          </strong>{' '}
+          <span className="value">{item.additionalNotes}</span>
+        </p>
+      )}
     </div>
   </List.Item>
 );
 
+// { field: 'appointmentRate', headerName: 'Appointment Rate', width: 150 },
+// { field: 'completionRate', headerName: 'Completion Rate', width: 180 },
+// { field: 'closeRate', headerName: 'Close Rate', width: 150 },
+// { field: 'conversionRate', headerName: 'Conversion Rate', width: 180 },
 const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, onClose }) => {
   return (
     <Drawer
@@ -151,6 +164,9 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
       {selectedRow ? (
         <>
           <Descriptions bordered column={1} size="small" style={{ marginBottom: '16px' }}>
+            <Descriptions.Item label={<span>Report Date</span>}>
+              {selectedRow.reportDate}
+            </Descriptions.Item>
             <Descriptions.Item label={<span>First Name</span>}>
               {selectedRow.firstName}
             </Descriptions.Item>
@@ -160,14 +176,27 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
             <Descriptions.Item label={<span>Location</span>}>
               {selectedRow.location}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Report Date</span>}>
-              {selectedRow.reportDate}
+            <Descriptions.Item label={<span>Appointment Rate</span>}>
+              {selectedRow.appointmentRate}
             </Descriptions.Item>
+            <Descriptions.Item label={<span>Completion Rate</span>}>
+              {selectedRow.completionRate}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Closing Rate</span>}>
+              {selectedRow.closeRate}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Total Conversion Rate</span>}>
+              {selectedRow.conversionRate}
+            </Descriptions.Item>
+
             <Descriptions.Item label={<span>Doors Knocked</span>}>
               {selectedRow.doorsKnocked}
             </Descriptions.Item>
             <Descriptions.Item label={<span>Inspections Scheduled</span>}>
               {selectedRow.inspectionsScheduledCount}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Company Leads Received</span>}>
+              {selectedRow.companyLeadsReceivedCount}
             </Descriptions.Item>
             <Descriptions.Item label={<span>Company Leads Received</span>}>
               {selectedRow.companyLeadsReceivedCount}

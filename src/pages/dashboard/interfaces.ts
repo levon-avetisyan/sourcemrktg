@@ -34,6 +34,10 @@ export interface IReportData {
   companyLeadsReceived: ICompanyLead[];
   locationId: string;
   timezone: string;
+  appointmentRate: number;
+  completionRate: number;
+  closeRate: number;
+  conversionRate: number;
 }
 
 export interface IGetReportDataResponse {

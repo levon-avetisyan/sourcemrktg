@@ -224,7 +224,7 @@ const ReportForm = () => {
               rules={[{ required: true, message: 'This field is required' }]}
               style={{ marginBottom: 0 }}
             >
-              <Input placeholder="Firt name & last name" />
+              <Input placeholder="First name & last name" />
             </Form.Item>
           </Col>
         </Row>
@@ -387,6 +387,18 @@ const ReportForm = () => {
             </Col>
           </Row>
         )}
+        {/* Additional Notes */}
+        <Row gutter={[12, 12]} style={{ marginBottom: '12px' }}>
+          <Col xs={24}>
+            <Form.Item
+              name={`additionalNotes_${name}_${index}`}
+              label="Additional Notes"
+              style={{ marginBottom: 0 }}
+            >
+              <Input.TextArea placeholder="Additional notes" />
+            </Form.Item>
+          </Col>
+        </Row>
       </Card>
     );
   };
