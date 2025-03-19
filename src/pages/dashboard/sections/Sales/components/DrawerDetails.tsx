@@ -195,7 +195,7 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
             <Descriptions.Item label={<span>Location</span>}>
               {selectedRow.location}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Installer Partner</span>}>
+            <Descriptions.Item label={<span>Install Partner</span>}>
               {selectedRow.installer}
             </Descriptions.Item>
             {/*<Descriptions.Item label={<span>Appointment Rate</span>}>*/}

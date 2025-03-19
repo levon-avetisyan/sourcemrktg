@@ -253,11 +253,11 @@ export const progressFormFields = [
   },
   {
     name: 'installer',
-    label: 'Installer Partner',
+    label: 'Install Partner',
     type: 'select',
     required: true,
     options: installers.map((i) => i.name),
-    tooltip: 'Select the installer partner',
+    tooltip: 'Select the install partner',
     category: 'General Information',
     gridSpan: 8,
   },

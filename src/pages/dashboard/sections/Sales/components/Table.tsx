@@ -38,7 +38,7 @@ const Table: React.FC<IProps> = ({
     { field: 'firstName', headerName: 'First Name', width: 150 },
     { field: 'lastName', headerName: 'Last Name', width: 150 },
     { field: 'location', headerName: 'Location', width: 180 },
-    { field: 'installer', headerName: 'Installer Partner', width: 150 },
+    { field: 'installer', headerName: 'Install Partner', width: 150 },
     // { field: 'appointmentRate', headerName: 'Appointment Rate', width: 150 },
     // { field: 'completionRate', headerName: 'Completion Rate', width: 180 },
     // { field: 'closeRate', headerName: 'Close Rate', width: 150 },
