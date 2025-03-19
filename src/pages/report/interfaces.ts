@@ -14,6 +14,7 @@ export interface IFormField {
 export interface IFormData {
   reportDate: string; // e.g. "2025-03-06T20:00:00.000Z"
   location: string;
+  installer: string;
   first_name: string;
   last_name: string;
   doors_knocked: number;

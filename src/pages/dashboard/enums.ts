@@ -26,3 +26,10 @@ export enum POSITIVE_OUTCOME_TYPE {
   monthlyRecurringPayment = 'Monthly Recurring Payment',
   scheduledInstallDate = 'Scheduled Install Date',
 }
+
+export enum PASS_2_DAYS_REASON {
+  techAvailability = 'Tech Availability',
+  moneyAvailability = 'Money Availability',
+  customerAvailability = 'Customer Availability',
+  other = 'Other',
+}

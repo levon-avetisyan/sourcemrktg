@@ -7,6 +7,8 @@ export interface IScheduledInspection {
   inspectionOutcome?: string; // e.g. "closed" | "notClosed"
   negativeOutcomeReason?: string; // e.g. "other", "noValue"
   otherReasonNegativeOutcome?: string;
+  isInstallDatePass2Days?: string;
+  otherReasonWhyPassed2Days?: string;
 }
 
 export interface ICompanyLead {
@@ -18,11 +20,14 @@ export interface ICompanyLead {
   inspectionOutcome?: string; // e.g. "closed" | "notClosed"
   negativeOutcomeReason?: string; // e.g. "other", "noValue"
   otherReasonNegativeOutcome?: string;
+  isInstallDatePass2Days?: string;
+  otherReasonWhyPassed2Days?: string;
 }
 
 export interface IReportData {
   reportDate: string; // or Date if you parse it
   location: string;
+  installer: string;
   customerId?: string;
   firstName: string;
   lastName: string;

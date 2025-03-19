@@ -5,6 +5,7 @@ import {
   APPOINTMENT_OUTCOME,
   INSPECTION_OUTCOME,
   NEGATIVE_OUTCOME_REASON,
+  PASS_2_DAYS_REASON,
 } from '../../../enums.ts';
 import {
   CalendarOutlined,
@@ -133,6 +134,24 @@ const InspectionDetails: React.FC<{ item: any }> = ({ item }) => (
               <span className="value">{new Date(item.installDate).toLocaleDateString()}</span>
             </p>
           )}
+          {item.installDate && item.isInstallDatePass2Days && (
+            <p style={{ margin: '4px 0', color: '#555' }}>
+              <strong>
+                <CalendarOutlined /> Why install date passed 2 days:
+              </strong>{' '}
+              <span className="value">
+                {PASS_2_DAYS_REASON[item.isInstallDatePass2Days as keyof typeof PASS_2_DAYS_REASON]}
+              </span>
+            </p>
+          )}
+          {item.installDate && item.otherReasonWhyPassed2Days && (
+            <p style={{ margin: '4px 0', color: '#555' }}>
+              <strong>
+                <EditOutlined /> Other Reason Why Passed 2 Days:
+              </strong>{' '}
+              <span className="value">{item.otherReasonWhyPassed2Days}</span>
+            </p>
+          )}
         </>
       )}
       {item.additionalNotes && (
@@ -176,18 +195,21 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
             <Descriptions.Item label={<span>Location</span>}>
               {selectedRow.location}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Appointment Rate</span>}>
-              {selectedRow.appointmentRate}
+            <Descriptions.Item label={<span>Installer Partner</span>}>
+              {selectedRow.installer}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Completion Rate</span>}>
-              {selectedRow.completionRate}
-            </Descriptions.Item>
-            <Descriptions.Item label={<span>Closing Rate</span>}>
-              {selectedRow.closeRate}
-            </Descriptions.Item>
-            <Descriptions.Item label={<span>Total Conversion Rate</span>}>
-              {selectedRow.conversionRate}
-            </Descriptions.Item>
+            {/*<Descriptions.Item label={<span>Appointment Rate</span>}>*/}
+            {/*  {selectedRow.appointmentRate}*/}
+            {/*</Descriptions.Item>*/}
+            {/*<Descriptions.Item label={<span>Completion Rate</span>}>*/}
+            {/*  {selectedRow.completionRate}*/}
+            {/*</Descriptions.Item>*/}
+            {/*<Descriptions.Item label={<span>Closing Rate</span>}>*/}
+            {/*  {selectedRow.closeRate}*/}
+            {/*</Descriptions.Item>*/}
+            {/*<Descriptions.Item label={<span>Total Conversion Rate</span>}>*/}
+            {/*  {selectedRow.conversionRate}*/}
+            {/*</Descriptions.Item>*/}
 
             <Descriptions.Item label={<span>Doors Knocked</span>}>
               {selectedRow.doorsKnocked}

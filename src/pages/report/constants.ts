@@ -203,6 +203,33 @@ export const locations = [
   },
 ];
 
+export const installers = [
+  {
+    name: 'Fox',
+    value: 'fox',
+  },
+  {
+    name: 'Insight',
+    value: 'insight',
+  },
+  {
+    name: 'Waltham',
+    value: 'waltham',
+  },
+  {
+    name: 'Western',
+    value: 'western',
+  },
+  {
+    name: 'OPC',
+    value: 'opc',
+  },
+  {
+    name: 'Home Team',
+    value: 'homeTeam',
+  },
+];
+
 export const progressFormFields = [
   // General Information
   {
@@ -212,7 +239,7 @@ export const progressFormFields = [
     required: true,
     tooltip: 'Select the date of the report',
     category: 'General Information',
-    gridSpan: 12,
+    gridSpan: 8,
   },
   {
     name: 'location',
@@ -222,7 +249,17 @@ export const progressFormFields = [
     options: locations.map((location) => location.name),
     tooltip: 'Choose the office location where you worked',
     category: 'General Information',
-    gridSpan: 12,
+    gridSpan: 8,
+  },
+  {
+    name: 'installer',
+    label: 'Installer Partner',
+    type: 'select',
+    required: true,
+    options: installers.map((i) => i.name),
+    tooltip: 'Select the installer partner',
+    category: 'General Information',
+    gridSpan: 8,
   },
   {
     name: 'firstName',
@@ -317,6 +354,21 @@ export const closedOptions = [
   { value: 'initialInstallCharged', label: 'Initial Install Charged' },
   { value: 'monthlyRecurringPayment', label: 'Monthly Recurring Payment' },
   { value: 'scheduledInstallDate', label: 'Scheduled Install Date' },
+];
+
+export const hasInstalledDatePassed2DaysReasons = [
+  {
+    value: 'moneyAvailability',
+    label: 'Money Availability',
+  },
+  {
+    value: 'customerAvailability',
+    label: 'Customer Availability',
+  },
+  {
+    value: 'techAvailability',
+    label: 'Tech Availability',
+  },
 ];
 
 export const progressFormFieldsComm = [

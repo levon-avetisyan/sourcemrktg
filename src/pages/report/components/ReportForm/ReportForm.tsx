@@ -4,6 +4,7 @@ import useSubmitReport from '../../../../hooks/useSubmitReport.ts';
 import './ReportForm.scss';
 import { groupFieldsByCategory, renderField, renderLabelWithTooltip } from './RenderFormFields.tsx';
 import {
+  hasInstalledDatePassed2DaysReasons,
   inspectionOutcomeOptions,
   negativeOutComeReasons,
   outcomeOptions,
@@ -169,6 +170,41 @@ const ReportForm = () => {
         updatedRows[index].installDate
       ) {
         removeField('installDate');
+      }
+
+      // Add logic to show additional row when installDate is selected
+      if (inputName === 'installDate' && value) {
+        const reportDate = form.getFieldValue('reportDate');
+        const installDateOnly = new Date(value);
+        const reportDateOnly = new Date(reportDate.$y, reportDate.$M, reportDate.$D);
+        const diffTime = Math.abs(installDateOnly.getTime() - reportDateOnly.getTime());
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays > 2) {
+          updatedRows[index] = {
+            ...updatedRows[index],
+            hasInstallDatePassed2Days: true,
+          };
+        } else {
+          updatedRows[index] = {
+            ...updatedRows[index],
+            hasInstallDatePassed2Days: false,
+          };
+        }
+      }
+
+      if (inputName === 'isInstallDatePass2Days') {
+        if (value === 'other') {
+          updatedRows[index] = {
+            ...updatedRows[index],
+            hasOtherReasonWhyPassed2Days: true,
+          };
+        } else {
+          updatedRows[index] = {
+            ...updatedRows[index],
+            hasOtherReasonWhyPassed2Days: false,
+          };
+        }
       }
 
       // Update state with the modified additionalRows
@@ -339,6 +375,54 @@ const ReportForm = () => {
                 </Form.Item>
               </Col>
             </Row>
+            {row.hasInstallDatePassed2Days && (
+              <Row style={{ marginBottom: '12px' }} gutter={{ xs: 12, lg: 24 }}>
+                <Col xs={24} lg={24}>
+                  <Form.Item
+                    name={`isInstallDatePass2Days_${name}_${index}`}
+                    label={renderLabelWithTooltip(
+                      'Please select the reason',
+                      'Please specify why has the install date passed 2 days.'
+                    )}
+                    rules={[{ required: true, message: 'This field is required' }]}
+                    style={{ marginBottom: 0 }}
+                  >
+                    <Select
+                      placeholder="Select the reason for the install date"
+                      onChange={(value: string) =>
+                        handleSelectInputChange(name, value, 'isInstallDatePass2Days', index)
+                      }
+                    >
+                      {hasInstalledDatePassed2DaysReasons.map((option) => (
+                        <Select.Option key={`${name}-${option.value}`} value={option.value}>
+                          {option.label}
+                        </Select.Option>
+                      ))}
+                      <Select.Option key={`other-${name}`} value="other">
+                        Other (please specify the reason)
+                      </Select.Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+              </Row>
+            )}
+            {row.hasOtherReasonWhyPassed2Days && (
+              <Row style={{ marginBottom: '12px' }} gutter={{ xs: 12, lg: 24 }}>
+                <Col xs={24} lg={24}>
+                  <Form.Item
+                    name={`otherReasonWhyPassed2Days_${name}_${index}`}
+                    label={renderLabelWithTooltip(
+                      'Write other reason',
+                      'Please specify why has the install date passed 2 days in your own words.'
+                    )}
+                    rules={[{ required: true, message: 'This field is required' }]}
+                    style={{ marginBottom: 0 }}
+                  >
+                    <Input placeholder="Write other reason why passed 2 days" />
+                  </Form.Item>
+                </Col>
+              </Row>
+            )}
           </>
         )}
 
@@ -387,6 +471,7 @@ const ReportForm = () => {
             </Col>
           </Row>
         )}
+
         {/* Additional Notes */}
         <Row gutter={[12, 12]} style={{ marginBottom: '12px' }}>
           <Col xs={24}>

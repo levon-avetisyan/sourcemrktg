@@ -18,6 +18,8 @@ export function transformReportData(data: any): IReportData {
         'installDate',
         'inspectionOutcome',
         'negativeOutcomeReason',
+        'isInstallDatePass2Days',
+        'otherReasonWhyPassed2Days',
         'otherReasonNegativeOutcome',
         'initialInstallCharged',
         'monthlyRecurringPayment',
@@ -40,6 +42,7 @@ export function transformReportData(data: any): IReportData {
   [
     'reportDate',
     'location',
+    'installer',
     'firstName',
     'lastName',
     'doorsKnocked',
