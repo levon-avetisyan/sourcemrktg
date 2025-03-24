@@ -60,6 +60,7 @@ export function transformReportData(data: any): IReportData {
     'inspectionsScheduled',
     inspectionsScheduled
   );
+
   if (scheduledInspections) {
     result.inspectionsScheduledCount = inspectionsScheduled;
     result.scheduledInspections = scheduledInspections;

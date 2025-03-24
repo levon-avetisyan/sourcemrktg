@@ -34,18 +34,27 @@ const Table: React.FC<IProps> = ({
   const [rows, setRows] = useState<GridRowsProp>([]);
 
   const columns: GridColDef[] = [
-    { field: 'reportDate', headerName: 'Report Date', width: 180 },
-    { field: 'firstName', headerName: 'First Name', width: 150 },
+    { field: 'reportDate', headerName: 'Report Date', width: 130 },
+    { field: 'firstName', headerName: 'First Name', width: 130 },
     { field: 'lastName', headerName: 'Last Name', width: 150 },
-    { field: 'location', headerName: 'Location', width: 180 },
-    { field: 'installer', headerName: 'Install Partner', width: 150 },
-    // { field: 'appointmentRate', headerName: 'Appointment Rate', width: 150 },
-    // { field: 'completionRate', headerName: 'Completion Rate', width: 180 },
-    // { field: 'closeRate', headerName: 'Close Rate', width: 150 },
-    // { field: 'conversionRate', headerName: 'Total Conversion Rate', width: 180 },
-    { field: 'inspectionsScheduledCount', headerName: 'Self Gen Inspections', width: 180 },
-    { field: 'companyLeadsReceivedCount', headerName: 'Company Leads Received', width: 200 },
-    { field: 'doorsKnocked', headerName: 'Doors Knocked', width: 150 },
+    { field: 'location', headerName: 'Location', width: 150 },
+    { field: 'installer', headerName: 'Install Partner', width: 130 },
+    { field: 'doorsKnocked', headerName: 'Doors Knocked', width: 130 },
+    { field: 'appointmentsScheduled', headerName: 'Set Appointments', width: 140 },
+    { field: 'inspectionsScheduledCount', headerName: 'Self Gen Appointments', width: 180 },
+    {
+      field: 'completedSelfGenInspections',
+      headerName: 'Self Gen Appointments\n' + '(Completed)',
+      width: 280,
+    },
+    {
+      field: 'closedScheduledInspections',
+      headerName: 'Self Gen Appointments (Closed)',
+      width: 240,
+    },
+    { field: 'totalCompanyLeadsReceived', headerName: 'Company Leads', width: 140 },
+    { field: 'completedCompanyLeads', headerName: 'Company Leads (Completed)', width: 220 },
+    { field: 'closedCompanyLeads', headerName: 'Company Leads (Closed)', width: 200 },
   ];
 
   useEffect(() => {
@@ -64,18 +73,15 @@ const Table: React.FC<IProps> = ({
             })
           : 'N/A',
         doorsKnocked: report?.doorsKnocked ?? 0,
-        inspectionsScheduledCount: Array.isArray(report?.scheduledInspections)
-          ? report.scheduledInspections.length
-          : 0,
-        companyLeadsReceivedCount: Array.isArray(report?.companyLeadsReceived)
-          ? report.companyLeadsReceived.length
-          : 0,
-        scheduledInspections: report?.scheduledInspections ?? [], // Include full details for Drawer
+        scheduledInspections: report?.scheduledInspections ?? [],
         companyLeadsReceived: report?.companyLeadsReceived ?? [],
-        appointmentRate: report?.appointmentRate ? `${report.appointmentRate} %` : 'N/A',
-        completionRate: report?.completionRate ? `${report.completionRate} %` : 'N/A',
-        closeRate: report?.closeRate ? `${report.closeRate} %` : 'N/A',
-        conversionRate: report?.conversionRate ? `${report.conversionRate} %` : 'N/A',
+        appointmentsScheduled: report?.appointmentsScheduled ?? 'N/A',
+        inspectionsScheduledCount: report?.inspectionsScheduledCount ?? 'N/A',
+        completedSelfGenInspections: report?.completedSelfGenInspections ?? 'N/A',
+        closedScheduledInspections: report?.closedScheduledInspections ?? 'N/A',
+        totalCompanyLeadsReceived: report?.totalCompanyLeadsReceived ?? 'N/A',
+        completedCompanyLeads: report?.completedCompanyLeads ?? 'N/A',
+        closedCompanyLeads: report?.closedCompanyLeads ?? 'N/A',
       }));
 
       setRows(formattedData);

@@ -198,30 +198,30 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ selectedRow, isVisible, o
             <Descriptions.Item label={<span>Install Partner</span>}>
               {selectedRow.installer}
             </Descriptions.Item>
-            {/*<Descriptions.Item label={<span>Appointment Rate</span>}>*/}
-            {/*  {selectedRow.appointmentRate}*/}
-            {/*</Descriptions.Item>*/}
-            {/*<Descriptions.Item label={<span>Completion Rate</span>}>*/}
-            {/*  {selectedRow.completionRate}*/}
-            {/*</Descriptions.Item>*/}
-            {/*<Descriptions.Item label={<span>Closing Rate</span>}>*/}
-            {/*  {selectedRow.closeRate}*/}
-            {/*</Descriptions.Item>*/}
-            {/*<Descriptions.Item label={<span>Total Conversion Rate</span>}>*/}
-            {/*  {selectedRow.conversionRate}*/}
-            {/*</Descriptions.Item>*/}
 
             <Descriptions.Item label={<span>Doors Knocked</span>}>
               {selectedRow.doorsKnocked}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Inspections Scheduled</span>}>
+            <Descriptions.Item label={<span>Set Appointments</span>}>
+              {selectedRow.appointmentsScheduled}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Self Gen Appointments</span>}>
               {selectedRow.inspectionsScheduledCount}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Company Leads Received</span>}>
-              {selectedRow.companyLeadsReceivedCount}
+            <Descriptions.Item label={<span>Self Gen Appointments Completed</span>}>
+              {selectedRow.completedSelfGenInspections}
             </Descriptions.Item>
-            <Descriptions.Item label={<span>Company Leads Received</span>}>
-              {selectedRow.companyLeadsReceivedCount}
+            <Descriptions.Item label={<span>Self Gen Closed</span>}>
+              {selectedRow.closedScheduledInspections}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Company Leads</span>}>
+              {selectedRow.totalCompanyLeadsReceived}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Company Leads Completed</span>}>
+              {selectedRow.completedCompanyLeads}
+            </Descriptions.Item>
+            <Descriptions.Item label={<span>Company Leads Closed</span>}>
+              {selectedRow.closedScheduledInspections}
             </Descriptions.Item>
           </Descriptions>
 

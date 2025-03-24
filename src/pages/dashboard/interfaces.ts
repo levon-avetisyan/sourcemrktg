@@ -27,22 +27,23 @@ export interface ICompanyLead {
 export interface IReportData {
   reportDate: string; // or Date if you parse it
   location: string;
+  timezone: string;
+  locationId: string;
   installer: string;
   customerId?: string;
   firstName: string;
   lastName: string;
   doorsKnocked: number;
   appointmentsScheduled: number;
+  completedSelfGenInspections: number;
+  closedScheduledInspections: number;
+  totalCompanyLeadsReceived: number;
+  completedCompanyLeads: number;
+  closedCompanyLeads: number;
+  totalNumberOfAppointments: number;
   inspectionsScheduledCount: number;
-  companyLeadsReceivedCount: number;
   scheduledInspections: IScheduledInspection[];
   companyLeadsReceived: ICompanyLead[];
-  locationId: string;
-  timezone: string;
-  appointmentRate: number;
-  completionRate: number;
-  closeRate: number;
-  conversionRate: number;
 }
 
 export interface IGetReportDataResponse {
