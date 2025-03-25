@@ -25,6 +25,7 @@ export interface ICompanyLead {
 }
 
 export interface IReportData {
+  _id: any;
   reportDate: string; // or Date if you parse it
   location: string;
   timezone: string;

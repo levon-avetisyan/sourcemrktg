@@ -3,6 +3,9 @@ import { DataGrid, GridColDef, GridRowParams, GridRowsProp } from '@mui/x-data-g
 import Filters from './Filters.tsx';
 import DrawerDetails from './DrawerDetails.tsx';
 import { IGetReportDataResponse, IReportData } from '../../../interfaces.ts';
+import useDeleteReport from '../../../../../hooks/useDeleteReport.ts';
+import { DeleteOutlined } from '@mui/icons-material';
+import { Modal } from 'antd';
 
 interface IProps {
   data: IGetReportDataResponse;
@@ -16,6 +19,7 @@ interface IProps {
   setSelectedLocation: (location: string) => void;
   searchQuery: string;
   dateRange: [Date, Date] | null;
+  refreshData: (page: number, pageSize: number) => Promise<void>;
 }
 const Table: React.FC<IProps> = ({
   data,
@@ -29,11 +33,38 @@ const Table: React.FC<IProps> = ({
   setDateRange,
   searchQuery,
   dateRange,
+  refreshData,
 }) => {
   const { reports, totalReports, currentPage } = data;
+
   const [rows, setRows] = useState<GridRowsProp>([]);
 
   const columns: GridColDef[] = [
+    {
+      field: 'actions',
+      headerName: 'Actions',
+      width: 100,
+      style: { textAlign: 'center' },
+      renderCell: (params) => (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            height: '100%',
+            paddingLeft: '10px',
+          }}
+        >
+          <DeleteOutlined
+            style={{ cursor: 'pointer', fontSize: '16px' }}
+            onClick={(e) => {
+              e.stopPropagation();
+              confirmDelete(params.id as number);
+            }}
+          />
+        </div>
+      ),
+    },
     { field: 'reportDate', headerName: 'Report Date', width: 130 },
     { field: 'firstName', headerName: 'First Name', width: 130 },
     { field: 'lastName', headerName: 'Last Name', width: 150 },
@@ -59,8 +90,8 @@ const Table: React.FC<IProps> = ({
 
   useEffect(() => {
     if (Array.isArray(reports)) {
-      const formattedData = reports.map((report, index) => ({
-        id: index + 1,
+      const formattedData = reports.map((report) => ({
+        id: report._id,
         firstName: report?.firstName || 'N/A',
         lastName: report?.lastName || 'N/A',
         location: report?.location || 'N/A',
@@ -87,6 +118,21 @@ const Table: React.FC<IProps> = ({
       setRows(formattedData);
     }
   }, [data]);
+
+  const { deleteReport, loading: loadingDeleteReport } = useDeleteReport();
+  const confirmDelete = (id: number) => {
+    Modal.confirm({
+      title: 'Are you sure you want to delete this report?',
+      content: 'This action cannot be undone.',
+      okText: 'Yes, delete it',
+      cancelText: 'Cancel',
+      okButtonProps: { danger: true, loading: loadingDeleteReport },
+      onOk: async () => {
+        await deleteReport(id);
+        refreshData(currentPage, pageSize);
+      },
+    });
+  };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value.toLowerCase());
@@ -135,7 +181,7 @@ const Table: React.FC<IProps> = ({
       <DataGrid
         rows={filteredRows}
         columns={columns}
-        loading={loading}
+        loading={loading || loadingDeleteReport}
         pagination
         pageSizeOptions={[5, 10, 20]}
         getRowHeight={() => 45}

@@ -45,7 +45,7 @@ const useReports = (searchQuery = '', location = '', dateRange: [Date, Date] | n
     fetchReports(page, pageSize);
   }, [page, pageSize, searchQuery, location, dateRange]);
 
-  return { data, loading, error, setPage, setPageSize, pageSize, page };
+  return { data, loading, error, setPage, setPageSize, pageSize, page, fetchReports };
 };
 
 export default useReports;
