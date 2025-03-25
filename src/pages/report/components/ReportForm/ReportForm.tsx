@@ -497,20 +497,20 @@ const ReportForm = () => {
   const onFinish = async (formData: IFormData) => {
     console.log('formData: ', formData);
     const response = await submit(formData);
-    if (response.status === 201) {
+    if (response && response.status === 201) {
       toast.success('Thank you. Your report has been submitted.');
 
-      // // Reset the form fields
-      // form.resetFields();
-      //
-      // // Reset state to its initial value
-      // setState({
-      //   additionalRows: {
-      //     inspectionsScheduled: [],
-      //     companyLeadsReceived: [],
-      //   },
-      //   showAppointmentsScheduled: false,
-      // });
+      // Reset the form fields
+      form.resetFields();
+
+      // Reset state to its initial value
+      setState({
+        additionalRows: {
+          inspectionsScheduled: [],
+          companyLeadsReceived: [],
+        },
+        showAppointmentsScheduled: false,
+      });
     }
   };
 
