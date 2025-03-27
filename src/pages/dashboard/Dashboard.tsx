@@ -6,8 +6,8 @@ import { Button, Layout, Menu } from 'antd';
 import Lotus from '../../assets/lotus.png';
 import { AnalyticsOutlined } from '@mui/icons-material';
 import DashboardHeader from './components/DashboardHeader.tsx';
-import SalesSection from './sections/Sales/SalesSection.tsx';
-import AnalyticsSection from './sections/Analytics/AnalyticsSection.tsx';
+import Onboarding from './sections/Onboarding';
+import SalesSection from './sections/Sales';
 
 const { Content, Sider } = Layout;
 
@@ -20,7 +20,7 @@ const items: MenuProps['items'] = [
   {
     key: '2',
     icon: <AnalyticsOutlined />,
-    label: 'Analytics',
+    label: 'Onboarding',
   },
 ];
 
@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
       case '1':
         return <SalesSection />;
       case '2':
-        return <AnalyticsSection />;
+        return <Onboarding />;
       default:
         return null;
     }

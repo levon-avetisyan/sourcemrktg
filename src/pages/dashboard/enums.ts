@@ -33,3 +33,12 @@ export enum PASS_2_DAYS_REASON {
   customerAvailability = 'Customer Availability',
   other = 'Other',
 }
+
+const OnboardingStatus = Object.freeze({
+  PENDING: 'pending',
+  IN_PROGRESS: 'in_progress',
+  COMPLETED: 'completed',
+  FAILED: 'failed',
+});
+
+export default OnboardingStatus;
